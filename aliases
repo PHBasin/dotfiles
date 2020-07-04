@@ -3,5 +3,37 @@ alias ip="curl ipinfo.io/ip"
 alias ips="ifconfig -a | perl -nle'/(\d+\.\d+\.\d+\.\d+)/ && print $1'"
 alias speedtest="wget -O /dev/null http://speedtest.wdc01.softlayer.com/downloads/test10.zip"
 
+# Open subsystem folder with GUI
+alias open="explorer.exe"
+
 # Quickly serve the current directory as HTTP
-alias serve='ruby -run -e httpd . -p 8000'  # Or python -m SimpleHTTPServer :)
+alias serve="ruby -run -e httpd . -p 8000"
+
+# Ruby on Rails generators
+alias rrg="rails generate"
+alias rrga="rails g assets"
+alias rrgc="rails g controller"
+alias rrgd="rails g decorator"
+alias rrgg="rails g generator"
+alias rrgh="rails g helper"
+alias rrgma="rails g mailer"
+alias rrgmi="rails g migration"
+alias rrgmo="rails g model"
+alias rrgt="rails g task"
+
+# Ruby on Rails commands
+alias rra="rails application"
+alias rrc="rails console"
+alias rrd="rails destroy"
+alias rrn="rails new"
+alias rrpr="rails profiler"
+alias rrpl="rails plugin"
+alias rrs="rails server"
+
+# Ruby on Rails database tasks
+alias rrdc="rake db:create"
+alias rrdd="rake db:drop"
+alias rrdm="rake db:migrate"
+alias rrdr="rake db:reset"
+alias rrds="rake db:seed"
+alias rrdsu="rake db:setup"

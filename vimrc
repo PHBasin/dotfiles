@@ -1,4 +1,6 @@
 syntax on
+set number
+set mouse=a
 set backspace=indent,eol,start
 set tabstop=2 shiftwidth=2 expandtab
 if has("multi_byte")

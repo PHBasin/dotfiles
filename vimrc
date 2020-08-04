@@ -9,8 +9,6 @@ endif
 syntax on
 colorscheme peachpuff
 
-set t_Co=256
-
 " Display line numbers on the left
 set number
 

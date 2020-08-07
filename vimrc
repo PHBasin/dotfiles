@@ -30,6 +30,9 @@ set tabstop=2
 " I want to find what I'm looking for
 set hlsearch
 
+" Automatically use the system clipboard for copy and paste
+set clipboard=unnamedplus
+
 " Compiler
 compiler gcc
 

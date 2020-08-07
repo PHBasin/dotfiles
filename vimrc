@@ -30,8 +30,14 @@ set tabstop=2
 " I want to find what I'm looking for
 set hlsearch
 
-" Automatically use the system clipboard for copy and paste
-set clipboard=unnamedplus
+" WSL yank support
+let s:clip = "/mnt/c/Windows/System32/clip.exe"
+if executable(s:clip)
+  augroup WSLYank
+    autocmd!
+    autocmd TextYankPost * if v:event.operator ==# 'y' | call system(s:clip, @0) | endif
+  augroup END
+endif
 
 " Compiler
 compiler gcc

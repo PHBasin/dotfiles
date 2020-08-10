@@ -7,7 +7,7 @@ endif
 
 " Enable syntax highlighting
 syntax on
-colorscheme peachpuff
+colorscheme fancy
 
 " Display line numbers on the left
 set number

@@ -15,6 +15,9 @@ set number
 " Enable use of the mouse for all modes
 set mouse=a
 
+" Allow copy / past on vim
+set clipboard=unnamedplus,unnamed,autoselect
+
 " Allow backspapcing over autoindent, line breaks and start of insert action
 set backspace=indent,eol,start
 
@@ -23,9 +26,9 @@ set autoindent
 set smartindent
 
 " Spaces are used
-set expandtab
-set shiftwidth=2
-set tabstop=2
+"set expandtab
+"set shiftwidth=2
+"set tabstop=2
 
 " I want to find what I'm looking for
 set hlsearch

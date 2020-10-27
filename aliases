@@ -6,6 +6,9 @@ alias speedtest="wget -O /dev/null http://speedtest.wdc01.softlayer.com/download
 # Open subsystem folder with GUI
 alias open="explorer.exe"
 
+# Compiler
+alias gcc="gcc -Wall -Werror -Wextra"
+
 # Quickly serve the current directory as HTTP
 alias serve="ruby -run -e httpd . -p 8000"
 

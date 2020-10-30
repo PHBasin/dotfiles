@@ -34,25 +34,16 @@ set smartindent
 set hlsearch
 
 " WSL yank support
-let s:clip = "/mnt/c/Windows/System32/clip.exe"
-if executable(s:clip)
-  augroup WSLYank
-    autocmd!
-    autocmd TextYankPost * if v:event.operator ==# 'y' | call system(s:clip, @0) | endif
-  augroup END
-endif
+"let s:clip = "/mnt/c/Windows/System32/clip.exe"
+"if executable(s:clip)
+"  augroup WSLYank
+"    autocmd!
+"    autocmd TextYankPost * if v:event.operator ==# 'y' | call system(s:clip, @0) | endif
+"  augroup END
+"endif
 
 " Compiler
 compiler gcc
 
 " Remove trailing whitespace
 au BufWritePre * "%s/\s\+$//e"
-
-" Automatic header
-au BufNewFile *.c 0r ~/.vim/templates/c.header
-au BufNewFile *.c exe "1," . 10 . "g/File Name :.*/s//File Name : " .expand("%")
-au BufNewFile *.c exe "1," . 10 . "g/Creation Date :.*/s//Creation Date : " .strftime("%d-%m-%Y")
-au BufNewFile *.c exe "$"
-au BufWritePre,FileWritePre *.c exe "normal ma"
-au BufWritePre,FileWritePre *.c exe "1," . 10 . "g/Last Modified :.*/s/Last Modified :.*/Last Modified : " .strftime("%c")
-au BufWritePost,FileWritePost *.c exe "normal `a"

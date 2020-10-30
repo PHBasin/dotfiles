@@ -42,10 +42,11 @@
   autocorrect = 1
 
 [push]
-	default = simple
+  default = simple
 
 [branch "master"]
   mergeoptions = --no-edit
+
 [user]
-	email = pierre-henri.basin@orange.fr
-	name = PHBasin
+  email = pierre-henri.basin@orange.fr
+  name = PHBasin

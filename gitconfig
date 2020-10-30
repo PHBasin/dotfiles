@@ -48,5 +48,5 @@
   mergeoptions = --no-edit
 
 [user]
-	email = pierre-henri.basin@orange.fr
+  email = pierre-henri.basin@orange.fr
   name = PHBasin

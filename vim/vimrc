@@ -15,9 +15,6 @@ set number
 " Enable use of the mouse for all modes
 set mouse=a
 
-" Allow copy / past on vim
-set clipboard=unnamedplus,unnamed,autoselect
-
 " Allow backspapcing over autoindent, line breaks and start of insert action
 set backspace=indent,eol,start
 
@@ -34,13 +31,13 @@ set tabstop=4
 set hlsearch
 
 " WSL yank support
-"let s:clip = "/mnt/c/Windows/System32/clip.exe"
-"if executable(s:clip)
-"  augroup WSLYank
-"    autocmd!
-"    autocmd TextYankPost * if v:event.operator ==# 'y' | call system(s:clip, @0) | endif
-"  augroup END
-"endif
+let s:clip = "/mnt/c/Windows/System32/clip.exe"
+if executable(s:clip)
+  augroup WSLYank
+    autocmd!
+    autocmd TextYankPost * if v:event.operator ==# 'y' | call system(s:clip, @0) | endif
+  augroup END
+endif
 
 " Compiler
 compiler gcc

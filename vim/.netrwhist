@@ -1,3 +1,8 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =1
-let g:netrw_dirhist_1='/home/phbasin/.config'
+let g:netrw_dirhistcnt =6
+let g:netrw_dirhist_6='/home/phbasin/piscine/C07/ex03'
+let g:netrw_dirhist_5='/home/phbasin/piscine/C07/ex02'
+let g:netrw_dirhist_4='/home/phbasin/piscine/C08/ex04'
+let g:netrw_dirhist_3='/home/phbasin/dotfiles/.git'
+let g:netrw_dirhist_2='/home/phbasin/dotfiles'
+let g:netrw_dirhist_1='/home/phbasin/dotfiles/vim'

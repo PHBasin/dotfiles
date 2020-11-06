@@ -11,7 +11,7 @@
 
 [core]
   pager = less -FRSX
-	editor = code --wait
+	editor = subl -n -w  >/dev/null 2>&1
 
 [alias]
   co = checkout
@@ -50,5 +50,6 @@
 [user]
 	email = pierre-henri.basin@orange.fr
 	name = PHBasin
+
 [credential]
 	helper = store

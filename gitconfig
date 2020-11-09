@@ -14,9 +14,9 @@
 	editor = subl -n -w  >/dev/null 2>&1
 
 [alias]
-  acm = !git add -A . && git commit -m
+  acm = !git add . && git commit -m
   br = branch
-  cm = commit -m
+  ci = commit
   co = checkout
   d = !git --no-pager diff
   dt  = difftool

@@ -1,6 +1,6 @@
 " Vim color file
 " Maintainer:	Pierre-Henri Basin
-" Licence:	MIT License
+" Licence:		MIT License
 " Last Change:	31-07-2020
 
 " First remove all existing highlighting.
@@ -37,12 +37,12 @@ hi DiffDelete	cterm=bold	ctermfg=4	ctermbg=6
 hi DiffText		cterm=bold	ctermbg=1
 
 " Colors for syntax highlighting
-hi Comment					ctermfg=darkblue
+hi Comment					ctermfg=12
 hi Constant					ctermfg=127
 hi String					ctermfg=196
-hi Identifier				ctermfg=lightblue
+hi Identifier				ctermfg=14
 hi Operator					ctermfg=196
-hi Function					ctermfg=45
+hi Function					ctermfg=14
 hi Statement				ctermfg=3
 hi PreProc					ctermfg=127
 hi Type						ctermfg=2

@@ -11,46 +11,45 @@ endif
 
 let colors_name = "fancy"
 
-hi SpecialKey term=bold ctermfg=4
-hi NonText term=bold cterm=bold ctermfg=4
-hi Directory term=bold ctermfg=4
-hi ErrorMsg term=standout cterm=bold ctermfg=7 ctermbg=1
-hi IncSearch term=reverse cterm=reverse
-hi Search term=reverse ctermbg=7
-hi MoreMsg term=bold ctermfg=2
-hi ModeMsg term=bold cterm=bold
-hi LineNr term=underline ctermfg=8
-hi Question term=standout ctermfg=2
-hi StatusLine term=bold,reverse cterm=bold,reverse
-hi StatusLineNC term=reverse cterm=reverse
-hi VertSplit term=reverse cterm=reverse
-hi Title term=bold ctermfg=5
-hi Visual term=reverse cterm=reverse
-hi VisualNOS term=bold,underline cterm=bold,underline
-hi WarningMsg term=standout ctermfg=1
-hi WildMenu term=standout ctermfg=0 ctermbg=3
-hi Folded term=standout ctermfg=4 ctermbg=7
-hi FoldColumn term=standout ctermfg=4 ctermbg=7
-hi DiffAdd term=bold ctermbg=4
-hi DiffChange term=bold ctermbg=5
-hi DiffDelete term=bold cterm=bold ctermfg=4 ctermbg=6
-hi DiffText term=reverse cterm=bold ctermbg=1
+hi SpecialKey				ctermfg=4
+hi NonText		cterm=bold	ctermfg=4
+hi Directory				ctermfg=4
+hi ErrorMsg		cterm=bold	ctermfg=7	ctermbg=1
+hi IncSearch	cterm=bold	ctermfg=16	ctermbg=15
+hi Search		cterm=reverse,bold		ctermbg=16
+hi MoreMsg					ctermfg=2
+hi ModeMsg		cterm=bold
+hi LineNr					ctermfg=8
+hi Question					ctermfg=2
+hi StatusLine	cterm=bold
+hi StatusLineNC	cterm=reverse
+hi VertSplit	cterm=reverse
+hi Title					ctermfg=5
+hi Visual		cterm=reverse
+hi VisualNOS	cterm=bold
+hi WarningMsg				ctermfg=1
+hi WildMenu					ctermfg=0	ctermbg=3
+hi Folded					ctermfg=4	ctermbg=7
+hi FoldColumn				ctermfg=4	ctermbg=7
+hi DiffAdd								ctermbg=4
+hi DiffChange							ctermbg=5
+hi DiffDelete	cterm=bold	ctermfg=4	ctermbg=6
+hi DiffText		cterm=bold	ctermbg=1
 
 " Colors for syntax highlighting
-hi Comment term=bold ctermfg=darkblue
-hi Constant term=underline ctermfg=127
-hi String term=underline ctermfg=196
-hi Identifier term=underline ctermfg=lightblue
-hi Operator term=bold ctermfg=196
-hi Function term=bold ctermfg=45
-hi Statement term=bold ctermfg=3
-hi PreProc term=underline ctermfg=127
-hi Type term=underline ctermfg=2
-hi Special term=bold ctermfg=127
-hi Ignore cterm=bold ctermfg=7
-hi Error term=reverse cterm=bold ctermfg=7 ctermbg=1
-hi Todo term=standout ctermfg=0 ctermbg=3
+hi Comment					ctermfg=darkblue
+hi Constant					ctermfg=127
+hi String					ctermfg=196
+hi Identifier				ctermfg=lightblue
+hi Operator					ctermfg=196
+hi Function					ctermfg=45
+hi Statement				ctermfg=3
+hi PreProc					ctermfg=127
+hi Type						ctermfg=2
+hi Special					ctermfg=127
+hi Ignore		cterm=bold	ctermfg=7
+hi Error		cterm=bold	ctermfg=7	ctermbg=1
+hi Todo						ctermfg=0	ctermbg=3
 
 " Must appear at the end of the file to work around some oddities
 set background=dark
-

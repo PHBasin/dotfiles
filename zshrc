@@ -44,6 +44,8 @@ alias norminette="~/.norminette/norminette.rb"
 # Encoding stuff for the terminal
 export LANG=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
+
+# Export favorite browser
 export BROWSER=/mnt/c/Program\ Files\ \(x86\)/Google/Chrome/Application/chrome.exe
 
 # Autostart PostgreSQL

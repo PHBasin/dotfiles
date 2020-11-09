@@ -14,13 +14,15 @@
 	editor = subl -n -w  >/dev/null 2>&1
 
 [alias]
-  co = checkout
-  st = status -sb
+  acm = !git add -A . && git commit -m
   br = branch
-  ci = commit
-  fo = fetch origin
+  cm = commit -m
+  co = checkout
   d = !git --no-pager diff
   dt  = difftool
+  fo = fetch origin
+  m = checkout master
+  st = status -sb
   stat = !git --no-pager diff --stat
 
   # Clean merged branches
@@ -32,8 +34,6 @@
   # Serve local repo. http://coderwall.com/p/eybtga
   # Then other can access via `git clone git://#{YOUR_IP_ADDRESS}/
   serve = !git daemon --reuseaddr --verbose  --base-path=. --export-all ./.git
-
-  m = checkout master
 
   # Removes a file from the index
   unstage = reset HEAD --

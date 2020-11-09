@@ -1,11 +1,4 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =9
-let g:netrw_dirhist_1='/home/phbasin/42/C07/ex05'
-let g:netrw_dirhist_2='/home/phbasin/42/C07'
-let g:netrw_dirhist_3='/home/phbasin/42/C07/ex04'
-let g:netrw_dirhist_4='/home/phbasin/42/C07'
-let g:netrw_dirhist_5='/home/phbasin/42/C07/ex02'
-let g:netrw_dirhist_6='/home/phbasin/42/C07'
-let g:netrw_dirhist_7='/home/phbasin/42/C07/ex04'
-let g:netrw_dirhist_8='/home/phbasin/42/C07'
-let g:netrw_dirhist_9='/home/phbasin/42/C07/ex05'
+let g:netrw_dirhist_cnt =2
+let g:netrw_dirhist_1='/home/phbasin/dotfiles'
+let g:netrw_dirhist_2='/home/phbasin'

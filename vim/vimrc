@@ -29,7 +29,7 @@ set tabstop=4
 " I want to find what I'm looking for
 set hlsearch
 
-" Chromebook yank support
+" ChromeOS yank support
 let g:os = substitute(system('uname -n'), '\n', '', '')
 if g:os == "penguin"
 	source ~/dotfiles/vim/after/plugin/osc52.vim

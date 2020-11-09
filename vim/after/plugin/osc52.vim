@@ -9,15 +9,6 @@
 " http://invisible-island.net/xterm/ctlseqs/ctlseqs.html, section "Operating
 " System Controls", Ps => 52.
 
-" To add this script to vim...
-"  1. Save it somewhere.
-"  2. Edit ~/.vimrc to include...
-"       source ~/path/to/osc52.vim
-"       vmap <C-c> y:call SendViaOSC52(getreg('"'))<cr>
-
-" This will map Ctrl+C to copy.  You can now select text in vi using the visual
-" mark mode or the mouse, and press Ctrl+C to copy it to the clipboard.
-
 " Max length of the OSC 52 sequence.  Sequences longer than this will not be
 " sent to the terminal.
 let g:max_osc52_sequence=100000

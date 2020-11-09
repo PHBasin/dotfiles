@@ -32,8 +32,10 @@ set hlsearch
 " ChromeOS yank support
 let g:os = substitute(system('uname -n'), '\n', '', '')
 if g:os == "penguin"
-	source ~/dotfiles/vim/after/plugin/osc52.vim
-	vmap <C-c> y:call SendViaOSC52(getreg('"'))<cr>
+	augroup osc52
+    	autocmd!
+    	autocmd TextYankPost * if v:event.operator ==# 'y' | call SendViaOSC52(getreg(v:event.regname)) | endif
+	augroup END
 endif
 
 " WSL yank support

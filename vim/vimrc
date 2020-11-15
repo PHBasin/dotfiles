@@ -5,7 +5,10 @@ else
   echoerr "Sorry, this version of (g)vim was not compiled with +multi_byte"
 endif
 
-" enable syntax highlighting
+" Compiler
+compiler gcc
+
+" Enable syntax highlighting
 syntax on
 colorscheme fancy
 
@@ -29,6 +32,18 @@ set tabstop=4
 " I want to find what I'm looking for
 set hlsearch
 
+" Auto-insert closing brackets
+inoremap " ""<left>
+inoremap ' ''<left>
+inoremap ( ()<left>
+inoremap [ []<left>
+inoremap { {}<left>
+inoremap {<CR> {<CR>}<ESC>O
+inoremap {;<CR> {<CR>};<ESC>O
+
+" Remove trailing whitespace
+au BufWritePre * "%s/\s\+$//e"
+
 " ChromeOS yank support
 let g:os = substitute(system('uname -n'), '\n', '', '')
 if g:os == "penguin"
@@ -46,9 +61,3 @@ if executable(s:clip)
     	autocmd TextYankPost * if v:event.operator ==# 'y' | call system(s:clip, @0) | endif
 	augroup END
 endif
-
-" Compiler
-compiler gcc
-
-" Remove trailing whitespace
-au BufWritePre * "%s/\s\+$//e"

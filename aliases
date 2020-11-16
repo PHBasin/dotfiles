@@ -4,9 +4,15 @@ alias ips="ifconfig -a | perl -nle'/(\d+\.\d+\.\d+\.\d+)/ && print $1'"
 alias speedtest="wget -O /dev/null http://speedtest.wdc01.softlayer.com/downloads/test10.zip"
 
 # Open subsystem folder with GUI
-if [[ `uname -r` =~ "microsoft" ]]; then
+if [[ `uname -a` =~ "microsoft" ]]; then
 	alias open="explorer.exe"
+elif [[ `uname -a` =~ "Linux" ]]; then
+	alias open="xdg-open"
 fi
+
+# Piscine shortcuts
+alias norminette="~/.norminette/norminette.rb"
+alias ptest="bash ~/piscine-test/test.sh"
 
 # Compiler
 alias gcc="gcc -Wall -Werror -Wextra"

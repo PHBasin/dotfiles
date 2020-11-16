@@ -49,7 +49,3 @@ fi
 
 # Autostart PostgreSQL
 sudo /etc/init.d/postgresql start
-
-# Piscine shortcuts
-alias norminette="~/.norminette/norminette.rb"
-alias ptest="bash ~/piscine-test/test.sh"

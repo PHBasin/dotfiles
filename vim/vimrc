@@ -33,13 +33,14 @@ set tabstop=4
 set hlsearch
 
 " Auto-insert closing brackets
-inoremap " ""<left>
-inoremap ' ''<left>
-inoremap ( ()<left>
-inoremap [ []<left>
-inoremap { {}<left>
+inoremap "<CR> ""<left>
+inoremap '<CR> ''<left>
+inoremap (<CR> ()<left>
+inoremap <<CR> <><left>
+inoremap [<CR> []<left>
 inoremap {<CR> {<CR>}<ESC>O
-inoremap {;<CR> {<CR>};<ESC>O
+
+"inoremap [; [<CR>];<C-c>O
 
 " Remove trailing whitespace
 au BufWritePre * "%s/\s\+$//e"

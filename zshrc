@@ -43,7 +43,7 @@ export LANG=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
 
 # Export favorite browser
-if [[ `uname -r` =~ "microsoft" ]]; then
+if [[ `uname -a` =~ "microsoft" ]]; then
 	export BROWSER=/mnt/c/Program\ Files\ \(x86\)/Google/Chrome/Application/chrome.exe
 fi
 

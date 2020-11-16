@@ -39,8 +39,7 @@ inoremap (<CR> ()<left>
 inoremap <<CR> <><left>
 inoremap [<CR> []<left>
 inoremap {<CR> {<CR>}<ESC>O
-
-"inoremap [; [<CR>];<C-c>O
+inoremap {; {<CR>};<ESC>O
 
 " Remove trailing whitespace
 au BufWritePre * "%s/\s\+$//e"

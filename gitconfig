@@ -17,6 +17,7 @@
 	acm = !git add . && git commit -m
 	br = branch
 	ci = commit
+	cm = commit -m
 	co = checkout
 	d = !git --no-pager diff
 	dt  = difftool

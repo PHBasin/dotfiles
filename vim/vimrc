@@ -32,6 +32,9 @@ set tabstop=4
 " I want to find what I'm looking for
 set hlsearch
 
+" Highlight the matching bracket
+set showmatch
+
 " Auto-insert closing brackets
 inoremap "<CR> ""<left>
 inoremap '<CR> ''<left>

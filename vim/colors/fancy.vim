@@ -3,6 +3,8 @@
 " Licence:		MIT License
 " Last Change:	31-07-2020
 
+" Colors cheat sheet: https://jonasjacek.github.io/colors/
+
 " First remove all existing highlighting.
 hi clear
 if exists("syntax_on")
@@ -21,6 +23,7 @@ hi MoreMsg					ctermfg=2
 hi ModeMsg		cterm=bold
 hi LineNr					ctermfg=8
 hi Question					ctermfg=2
+hi MatchParen							ctermbg=8
 hi StatusLine	cterm=bold
 hi StatusLineNC	cterm=reverse
 hi VertSplit	cterm=reverse
@@ -29,6 +32,8 @@ hi Visual		cterm=reverse
 hi VisualNOS	cterm=bold
 hi WarningMsg				ctermfg=1
 hi WildMenu					ctermfg=0	ctermbg=3
+hi PmenuSel					ctermfg=0	ctermbg=7
+hi Pmenu					ctermfg=0	ctermbg=15
 hi Folded					ctermfg=4	ctermbg=7
 hi FoldColumn				ctermfg=4	ctermbg=7
 hi DiffAdd								ctermbg=4

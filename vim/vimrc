@@ -36,13 +36,13 @@ set hlsearch
 set showmatch
 
 " Auto-insert closing brackets
-inoremap "<CR> ""<left>
-inoremap '<CR> ''<left>
-inoremap (<CR> ()<left>
-inoremap <<CR> <><left>
-inoremap [<CR> []<left>
-inoremap {<CR> {<CR>}<ESC>O
-inoremap {; {<CR>};<ESC>O
+inoremap "<Tab>	""<left>
+inoremap '<Tab>	''<left>
+inoremap (<Tab>	()<left>
+inoremap <<Tab>	<><left>
+inoremap [<Tab>	[]<left>
+inoremap {<Tab>	{<CR>}<ESC>O
+inoremap {;		{<CR>};<ESC>O
 
 " Remove trailing whitespace
 au BufWritePre * "%s/\s\+$//e"
@@ -64,3 +64,6 @@ if executable(s:clip)
     	autocmd TextYankPost * if v:event.operator ==# 'y' | call system(s:clip, @0) | endif
 	augroup END
 endif
+
+" No history or bookmarks
+let g:netrw_dirhistmax = 0

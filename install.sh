@@ -10,7 +10,7 @@ backup() {
 
 #!/bin/zsh
 for name in *; do
-  if [ ! -a "$name" ]; then
+  if [ ! -d "$name" ]; then
     target="$HOME/.$name"
     if [[ ! "$name" =~ '\.sh$' ]]; then
       backup $target

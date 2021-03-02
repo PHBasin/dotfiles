@@ -11,6 +11,7 @@ export HOMEBREW_NO_ANALYTICS=1
 ZSH_DISABLE_COMPFIX=true
 
 # Actually load Oh-My-Zsh
+ZSH_DISABLE_COMPFIX=true
 source "${ZSH}/oh-my-zsh.sh"
 unalias rm # No interactive rm by default (brought by plugins/common-aliases)
 
@@ -49,4 +50,3 @@ fi
 
 # Autostart PostgreSQL
 # sudo /etc/init.d/postgresql start
-

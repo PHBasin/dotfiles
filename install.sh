@@ -10,16 +10,17 @@ backup() {
 
 #!/bin/zsh
 for name in *; do
-	if [ ! -a "$name" ]; then
-		target="$HOME/.$name"
-		if [[ ! "$name" =~ '\.sh$' ]]; then
-			backup $target
-			if [ ! -e "$target" ]; then
-				echo "-----> Symlinking your new $target"
-				ln -s "$PWD/$name" "$target"
-			fi
-		fi
-	fi
+  if [ ! -d "$name" ]; then
+    target="$HOME/.$name"
+    if [[ ! "$name" =~ '\.sh$' ]]; then
+      backup $target
+
+      if [ ! -e "$target" ]; then
+        echo "-----> Symlinking your new $target"
+        ln -s "$PWD/$name" "$target"
+      fi
+    fi
+  fi
 done
 
 REGULAR="\\033[0;39m"

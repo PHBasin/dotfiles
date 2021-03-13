@@ -22,8 +22,8 @@ set mouse=a
 set backspace=indent,eol,start
 
 " Enable autoindent
-set autoindent
-set smartindent
+" set autoindent
+" set smartindent
 
 " Spaces are used
 set shiftwidth=4
@@ -43,6 +43,9 @@ inoremap <<Tab>	<><left>
 inoremap [<Tab>	[]<left>
 inoremap {<Tab>	{<CR>}<ESC>O
 inoremap {;		{<CR>};<ESC>O
+
+" Change .viminfo location
+set viminfo+=n~/.vim/viminfo
 
 " Remove trailing whitespace
 au BufWritePre * "%s/\s\+$//e"

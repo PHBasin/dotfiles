@@ -10,6 +10,9 @@ elif [[ `uname -a` =~ "Linux" ]]; then
 	alias open="xdg-open"
 fi
 
+# Python command
+alias py="python3"
+
 # Piscine shortcuts
 alias norminette="~/.norminette/norminette.rb"
 alias ptest="bash ~/piscine-test/test.sh"

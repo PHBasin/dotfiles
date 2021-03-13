@@ -12,7 +12,7 @@
 ~h
 # Command Line History (newest to oldest):
 :x
-|2,0,1615658172,,"x"
+|2,0,1615658311,,"x"
 :q
 |2,0,1615658062,,"q"
 
@@ -25,34 +25,65 @@
 # Debug Line History (newest to oldest):
 
 # Registers:
+""1	LINE	0
+	>>>>>>> c11b63ba83682765036ae535ca0fd6f0c98831b1
+|3,1,1,1,1,0,1615658255,">>>>>>> c11b63ba83682765036ae535ca0fd6f0c98831b1"
+"2	LINE	0
+	"set smartindent
+|3,0,2,1,1,0,1615658253,"\"set smartindent"
+"3	LINE	0
+	"set autoindent
+|3,0,3,1,1,0,1615658253,"\"set autoindent"
+"4	LINE	0
+	=======
+|3,0,4,1,1,0,1615658252,"======="
+"5	LINE	0
+	<<<<<<< HEAD
+|3,0,5,1,1,0,1615658251,"<<<<<<< HEAD"
 
 # File marks:
-'0  25  1  ~/dotfiles/vim/vimrc
-|4,48,25,1,1615658172,"~/dotfiles/vim/vimrc"
+'0  1  19  ~/dotfiles/vim/vimrc
+|4,48,1,19,1615658311,"~/dotfiles/vim/vimrc"
 '1  72  0  ~/dotfiles/vim/vimrc
-|4,49,72,0,1615658062,"~/dotfiles/vim/vimrc"
+|4,49,72,0,1615658264,"~/dotfiles/vim/vimrc"
 '2  72  0  ~/dotfiles/vim/vimrc
-|4,50,72,0,1615658062,"~/dotfiles/vim/vimrc"
-'3  1  0  ~/dotfiles/vimrc
-|4,51,1,0,1615658036,"~/dotfiles/vimrc"
-'4  1  0  ~/dotfiles/irbrc
-|4,52,1,0,1615657988,"~/dotfiles/irbrc"
-'5  1  0  ~/dotfiles/rspec
-|4,53,1,0,1615657976,"~/dotfiles/rspec"
-'6  72  0  ~/dotfiles/vim/vimrc
-|4,54,72,0,1615657826,"~/dotfiles/vim/vimrc"
-'7  72  0  ~/dotfiles/vim/vimrc
-|4,55,72,0,1615657826,"~/dotfiles/vim/vimrc"
-'8  1  0  ~/.tm_properties
-|4,56,1,0,1615657789,"~/.tm_properties"
-'9  103  0  ~/.oh-my-zsh/oh-my-zsh.sh
-|4,57,103,0,1615488141,"~/.oh-my-zsh/oh-my-zsh.sh"
+|4,50,72,0,1615658264,"~/dotfiles/vim/vimrc"
+'3  25  1  ~/dotfiles/vim/vimrc
+|4,51,25,1,1615658172,"~/dotfiles/vim/vimrc"
+'4  25  1  ~/dotfiles/vim/vimrc
+|4,52,25,1,1615658172,"~/dotfiles/vim/vimrc"
+'5  25  1  ~/dotfiles/vim/vimrc
+|4,53,25,1,1615658172,"~/dotfiles/vim/vimrc"
+'6  25  1  ~/dotfiles/vim/vimrc
+|4,54,25,1,1615658172,"~/dotfiles/vim/vimrc"
+'7  67  0  ~/dotfiles/vim/vimrc
+|4,55,67,0,1615658062,"~/dotfiles/vim/vimrc"
+'8  67  0  ~/dotfiles/vim/vimrc
+|4,56,67,0,1615658062,"~/dotfiles/vim/vimrc"
+'9  72  0  ~/dotfiles/vim/vimrc
+|4,57,72,0,1615658062,"~/dotfiles/vim/vimrc"
 
 # Jumplist (newest first):
+-'  1  19  ~/dotfiles/vim/vimrc
+|4,39,1,19,1615658311,"~/dotfiles/vim/vimrc"
+-'  72  0  ~/dotfiles/vim/vimrc
+|4,39,72,0,1615658264,"~/dotfiles/vim/vimrc"
+-'  72  0  ~/dotfiles/vim/vimrc
+|4,39,72,0,1615658264,"~/dotfiles/vim/vimrc"
+-'  1  0  ~/dotfiles/vim/vimrc
+|4,39,1,0,1615658247,"~/dotfiles/vim/vimrc"
+-'  25  1  ~/dotfiles/vim/vimrc
+|4,39,25,1,1615658172,"~/dotfiles/vim/vimrc"
+-'  25  1  ~/dotfiles/vim/vimrc
+|4,39,25,1,1615658172,"~/dotfiles/vim/vimrc"
 -'  25  1  ~/dotfiles/vim/vimrc
 |4,39,25,1,1615658172,"~/dotfiles/vim/vimrc"
 -'  1  0  ~/dotfiles/vim/vimrc
 |4,39,1,0,1615658148,"~/dotfiles/vim/vimrc"
+-'  67  0  ~/dotfiles/vim/vimrc
+|4,39,67,0,1615658062,"~/dotfiles/vim/vimrc"
+-'  67  0  ~/dotfiles/vim/vimrc
+|4,39,67,0,1615658062,"~/dotfiles/vim/vimrc"
 -'  72  0  ~/dotfiles/vim/vimrc
 |4,39,72,0,1615658062,"~/dotfiles/vim/vimrc"
 -'  72  0  ~/dotfiles/vim/vimrc
@@ -67,6 +98,78 @@
 |4,39,1,0,1615658036,"~/dotfiles/vimrc"
 -'  1  0  ~/dotfiles/vimrc
 |4,39,1,0,1615658036,"~/dotfiles/vimrc"
+-'  1  0  ~/dotfiles/vimrc
+|4,39,1,0,1615658036,"~/dotfiles/vimrc"
+-'  1  0  ~/dotfiles/vimrc
+|4,39,1,0,1615658036,"~/dotfiles/vimrc"
+-'  1  0  ~/dotfiles/vimrc
+|4,39,1,0,1615658036,"~/dotfiles/vimrc"
+-'  1  0  ~/dotfiles/vimrc
+|4,39,1,0,1615658036,"~/dotfiles/vimrc"
+-'  1  0  ~/dotfiles/vimrc
+|4,39,1,0,1615658036,"~/dotfiles/vimrc"
+-'  1  0  ~/dotfiles/vimrc
+|4,39,1,0,1615658036,"~/dotfiles/vimrc"
+-'  1  0  ~/dotfiles/vimrc
+|4,39,1,0,1615658036,"~/dotfiles/vimrc"
+-'  1  0  ~/dotfiles/vimrc
+|4,39,1,0,1615658036,"~/dotfiles/vimrc"
+-'  1  0  ~/dotfiles/vimrc
+|4,39,1,0,1615658036,"~/dotfiles/vimrc"
+-'  1  0  ~/dotfiles/vimrc
+|4,39,1,0,1615658036,"~/dotfiles/vimrc"
+-'  1  0  ~/dotfiles/vimrc
+|4,39,1,0,1615658036,"~/dotfiles/vimrc"
+-'  1  0  ~/dotfiles/vimrc
+|4,39,1,0,1615658036,"~/dotfiles/vimrc"
+-'  1  0  ~/dotfiles/irbrc
+|4,39,1,0,1615657988,"~/dotfiles/irbrc"
+-'  1  0  ~/dotfiles/irbrc
+|4,39,1,0,1615657988,"~/dotfiles/irbrc"
+-'  1  0  ~/dotfiles/irbrc
+|4,39,1,0,1615657988,"~/dotfiles/irbrc"
+-'  1  0  ~/dotfiles/irbrc
+|4,39,1,0,1615657988,"~/dotfiles/irbrc"
+-'  1  0  ~/dotfiles/irbrc
+|4,39,1,0,1615657988,"~/dotfiles/irbrc"
+-'  1  0  ~/dotfiles/irbrc
+|4,39,1,0,1615657988,"~/dotfiles/irbrc"
+-'  1  0  ~/dotfiles/irbrc
+|4,39,1,0,1615657988,"~/dotfiles/irbrc"
+-'  1  0  ~/dotfiles/irbrc
+|4,39,1,0,1615657988,"~/dotfiles/irbrc"
+-'  1  0  ~/dotfiles/irbrc
+|4,39,1,0,1615657988,"~/dotfiles/irbrc"
+-'  1  0  ~/dotfiles/irbrc
+|4,39,1,0,1615657988,"~/dotfiles/irbrc"
+-'  1  0  ~/dotfiles/irbrc
+|4,39,1,0,1615657988,"~/dotfiles/irbrc"
+-'  1  0  ~/dotfiles/irbrc
+|4,39,1,0,1615657988,"~/dotfiles/irbrc"
+-'  1  0  ~/dotfiles/irbrc
+|4,39,1,0,1615657988,"~/dotfiles/irbrc"
+-'  1  0  ~/dotfiles/irbrc
+|4,39,1,0,1615657988,"~/dotfiles/irbrc"
+-'  1  0  ~/dotfiles/irbrc
+|4,39,1,0,1615657988,"~/dotfiles/irbrc"
+-'  1  0  ~/dotfiles/irbrc
+|4,39,1,0,1615657988,"~/dotfiles/irbrc"
+-'  1  0  ~/dotfiles/irbrc
+|4,39,1,0,1615657988,"~/dotfiles/irbrc"
+-'  1  0  ~/dotfiles/irbrc
+|4,39,1,0,1615657988,"~/dotfiles/irbrc"
+-'  1  0  ~/dotfiles/irbrc
+|4,39,1,0,1615657988,"~/dotfiles/irbrc"
+-'  1  0  ~/dotfiles/irbrc
+|4,39,1,0,1615657988,"~/dotfiles/irbrc"
+-'  1  0  ~/dotfiles/irbrc
+|4,39,1,0,1615657988,"~/dotfiles/irbrc"
+-'  1  0  ~/dotfiles/irbrc
+|4,39,1,0,1615657988,"~/dotfiles/irbrc"
+-'  1  0  ~/dotfiles/irbrc
+|4,39,1,0,1615657988,"~/dotfiles/irbrc"
+-'  1  0  ~/dotfiles/irbrc
+|4,39,1,0,1615657988,"~/dotfiles/irbrc"
 -'  1  0  ~/dotfiles/irbrc
 |4,39,1,0,1615657988,"~/dotfiles/irbrc"
 -'  1  0  ~/dotfiles/irbrc
@@ -115,150 +218,61 @@
 |4,39,1,0,1615657976,"~/dotfiles/rspec"
 -'  1  0  ~/dotfiles/rspec
 |4,39,1,0,1615657976,"~/dotfiles/rspec"
--'  72  0  ~/dotfiles/vim/vimrc
-|4,39,72,0,1615657826,"~/dotfiles/vim/vimrc"
--'  72  0  ~/dotfiles/vim/vimrc
-|4,39,72,0,1615657826,"~/dotfiles/vim/vimrc"
--'  72  0  ~/dotfiles/vim/vimrc
-|4,39,72,0,1615657826,"~/dotfiles/vim/vimrc"
--'  72  0  ~/dotfiles/vim/vimrc
-|4,39,72,0,1615657826,"~/dotfiles/vim/vimrc"
--'  72  0  ~/dotfiles/vim/vimrc
-|4,39,72,0,1615657826,"~/dotfiles/vim/vimrc"
--'  72  0  ~/dotfiles/vim/vimrc
-|4,39,72,0,1615657826,"~/dotfiles/vim/vimrc"
--'  72  0  ~/dotfiles/vim/vimrc
-|4,39,72,0,1615657826,"~/dotfiles/vim/vimrc"
--'  72  0  ~/dotfiles/vim/vimrc
-|4,39,72,0,1615657826,"~/dotfiles/vim/vimrc"
--'  1  0  ~/dotfiles/vim/vimrc
-|4,39,1,0,1615657802,"~/dotfiles/vim/vimrc"
--'  1  0  ~/dotfiles/vim/vimrc
-|4,39,1,0,1615657802,"~/dotfiles/vim/vimrc"
--'  1  0  ~/dotfiles/vim/vimrc
-|4,39,1,0,1615657802,"~/dotfiles/vim/vimrc"
--'  1  0  ~/dotfiles/vim/vimrc
-|4,39,1,0,1615657802,"~/dotfiles/vim/vimrc"
--'  1  0  ~/dotfiles/vim/vimrc
-|4,39,1,0,1615657802,"~/dotfiles/vim/vimrc"
--'  1  0  ~/dotfiles/vim/vimrc
-|4,39,1,0,1615657802,"~/dotfiles/vim/vimrc"
--'  1  0  ~/dotfiles/vim/vimrc
-|4,39,1,0,1615657802,"~/dotfiles/vim/vimrc"
--'  1  0  ~/dotfiles/vim/vimrc
-|4,39,1,0,1615657802,"~/dotfiles/vim/vimrc"
--'  1  0  ~/.tm_properties
-|4,39,1,0,1615657789,"~/.tm_properties"
--'  1  0  ~/.tm_properties
-|4,39,1,0,1615657789,"~/.tm_properties"
--'  1  0  ~/.tm_properties
-|4,39,1,0,1615657789,"~/.tm_properties"
--'  1  0  ~/.tm_properties
-|4,39,1,0,1615657789,"~/.tm_properties"
--'  1  0  ~/.tm_properties
-|4,39,1,0,1615657789,"~/.tm_properties"
--'  1  0  ~/.tm_properties
-|4,39,1,0,1615657789,"~/.tm_properties"
--'  1  0  ~/.tm_properties
-|4,39,1,0,1615657789,"~/.tm_properties"
--'  1  0  ~/.tm_properties
-|4,39,1,0,1615657789,"~/.tm_properties"
--'  1  0  ~/.tm_properties
-|4,39,1,0,1615657789,"~/.tm_properties"
--'  1  0  ~/.tm_properties
-|4,39,1,0,1615657789,"~/.tm_properties"
--'  1  0  ~/.tm_properties
-|4,39,1,0,1615657789,"~/.tm_properties"
--'  1  0  ~/.tm_properties
-|4,39,1,0,1615657789,"~/.tm_properties"
--'  1  0  ~/.tm_properties
-|4,39,1,0,1615657789,"~/.tm_properties"
--'  1  0  ~/.tm_properties
-|4,39,1,0,1615657789,"~/.tm_properties"
--'  1  0  ~/.tm_properties
-|4,39,1,0,1615657789,"~/.tm_properties"
--'  1  0  ~/.tm_properties
-|4,39,1,0,1615657789,"~/.tm_properties"
--'  1  0  ~/.tm_properties
-|4,39,1,0,1615657789,"~/.tm_properties"
--'  1  0  ~/.tm_properties
-|4,39,1,0,1615657789,"~/.tm_properties"
--'  1  0  ~/.tm_properties
-|4,39,1,0,1615657789,"~/.tm_properties"
--'  1  0  ~/.tm_properties
-|4,39,1,0,1615657789,"~/.tm_properties"
--'  1  0  ~/.tm_properties
-|4,39,1,0,1615657789,"~/.tm_properties"
--'  1  0  ~/.tm_properties
-|4,39,1,0,1615657789,"~/.tm_properties"
--'  1  0  ~/.tm_properties
-|4,39,1,0,1615657789,"~/.tm_properties"
--'  1  0  ~/.tm_properties
-|4,39,1,0,1615657789,"~/.tm_properties"
--'  1  0  ~/.tm_properties
-|4,39,1,0,1615657789,"~/.tm_properties"
--'  1  0  ~/.tm_properties
-|4,39,1,0,1615657789,"~/.tm_properties"
--'  1  0  ~/.tm_properties
-|4,39,1,0,1615657789,"~/.tm_properties"
--'  1  0  ~/.tm_properties
-|4,39,1,0,1615657789,"~/.tm_properties"
--'  1  0  ~/.tm_properties
-|4,39,1,0,1615657789,"~/.tm_properties"
--'  1  0  ~/.tm_properties
-|4,39,1,0,1615657789,"~/.tm_properties"
--'  1  0  ~/.tm_properties
-|4,39,1,0,1615657789,"~/.tm_properties"
--'  1  0  ~/.tm_properties
-|4,39,1,0,1615657789,"~/.tm_properties"
--'  1  0  ~/.tm_properties
-|4,39,1,0,1615657789,"~/.tm_properties"
--'  1  0  ~/.tm_properties
-|4,39,1,0,1615657789,"~/.tm_properties"
--'  1  0  ~/.tm_properties
-|4,39,1,0,1615657789,"~/.tm_properties"
--'  1  0  ~/.tm_properties
-|4,39,1,0,1615657789,"~/.tm_properties"
--'  1  0  ~/.tm_properties
-|4,39,1,0,1615657789,"~/.tm_properties"
--'  1  0  ~/.tm_properties
-|4,39,1,0,1615657789,"~/.tm_properties"
--'  1  0  ~/.tm_properties
-|4,39,1,0,1615657789,"~/.tm_properties"
--'  1  0  ~/.tm_properties
-|4,39,1,0,1615657789,"~/.tm_properties"
--'  1  0  ~/.tm_properties
-|4,39,1,0,1615657789,"~/.tm_properties"
--'  1  0  ~/.tm_properties
-|4,39,1,0,1615657789,"~/.tm_properties"
--'  1  0  ~/.tm_properties
-|4,39,1,0,1615657789,"~/.tm_properties"
--'  1  0  ~/.tm_properties
-|4,39,1,0,1615657789,"~/.tm_properties"
--'  1  0  ~/.tm_properties
-|4,39,1,0,1615657789,"~/.tm_properties"
--'  1  0  ~/.tm_properties
-|4,39,1,0,1615657789,"~/.tm_properties"
--'  1  0  ~/.tm_properties
-|4,39,1,0,1615657789,"~/.tm_properties"
--'  1  0  ~/.tm_properties
-|4,39,1,0,1615657789,"~/.tm_properties"
--'  1  0  ~/.tm_properties
-|4,39,1,0,1615657789,"~/.tm_properties"
--'  1  0  ~/.tm_properties
-|4,39,1,0,1615657789,"~/.tm_properties"
--'  1  0  ~/.tm_properties
-|4,39,1,0,1615657789,"~/.tm_properties"
+-'  1  0  ~/dotfiles/rspec
+|4,39,1,0,1615657976,"~/dotfiles/rspec"
+-'  1  0  ~/dotfiles/rspec
+|4,39,1,0,1615657976,"~/dotfiles/rspec"
+-'  1  0  ~/dotfiles/rspec
+|4,39,1,0,1615657976,"~/dotfiles/rspec"
+-'  1  0  ~/dotfiles/rspec
+|4,39,1,0,1615657976,"~/dotfiles/rspec"
+-'  1  0  ~/dotfiles/rspec
+|4,39,1,0,1615657976,"~/dotfiles/rspec"
+-'  1  0  ~/dotfiles/rspec
+|4,39,1,0,1615657976,"~/dotfiles/rspec"
+-'  1  0  ~/dotfiles/rspec
+|4,39,1,0,1615657976,"~/dotfiles/rspec"
+-'  1  0  ~/dotfiles/rspec
+|4,39,1,0,1615657976,"~/dotfiles/rspec"
+-'  1  0  ~/dotfiles/rspec
+|4,39,1,0,1615657976,"~/dotfiles/rspec"
+-'  1  0  ~/dotfiles/rspec
+|4,39,1,0,1615657976,"~/dotfiles/rspec"
+-'  1  0  ~/dotfiles/rspec
+|4,39,1,0,1615657976,"~/dotfiles/rspec"
+-'  1  0  ~/dotfiles/rspec
+|4,39,1,0,1615657976,"~/dotfiles/rspec"
+-'  1  0  ~/dotfiles/rspec
+|4,39,1,0,1615657976,"~/dotfiles/rspec"
+-'  1  0  ~/dotfiles/rspec
+|4,39,1,0,1615657976,"~/dotfiles/rspec"
+-'  1  0  ~/dotfiles/rspec
+|4,39,1,0,1615657976,"~/dotfiles/rspec"
+-'  1  0  ~/dotfiles/rspec
+|4,39,1,0,1615657976,"~/dotfiles/rspec"
+-'  1  0  ~/dotfiles/rspec
+|4,39,1,0,1615657976,"~/dotfiles/rspec"
+-'  1  0  ~/dotfiles/rspec
+|4,39,1,0,1615657976,"~/dotfiles/rspec"
+-'  1  0  ~/dotfiles/rspec
+|4,39,1,0,1615657976,"~/dotfiles/rspec"
+-'  1  0  ~/dotfiles/rspec
+|4,39,1,0,1615657976,"~/dotfiles/rspec"
+-'  1  0  ~/dotfiles/rspec
+|4,39,1,0,1615657976,"~/dotfiles/rspec"
+-'  1  0  ~/dotfiles/rspec
+|4,39,1,0,1615657976,"~/dotfiles/rspec"
+-'  1  0  ~/dotfiles/rspec
+|4,39,1,0,1615657976,"~/dotfiles/rspec"
 
 # History of marks within files (newest to oldest):
 
 > ~/dotfiles/vim/vimrc
-	*	1615658171	0
-	"	25	1
-	^	25	2
-	.	25	0
-	+	26	0
+	*	1615658310	0
+	"	1	19
+	.	27	0
 	+	25	0
+	+	27	0
 
 > ~/dotfiles/vimrc
 	*	1615658034	0

@@ -26,8 +26,8 @@ set backspace=indent,eol,start
 " set smartindent
 
 " Spaces are used
-set shiftwidth=4
-set tabstop=4
+set shiftwidth=2
+set tabstop=2
 
 " I want to find what I'm looking for
 set hlsearch
@@ -54,8 +54,8 @@ au BufWritePre * "%s/\s\+$//e"
 let g:os = substitute(system('uname -n'), '\n', '', '')
 if g:os == "penguin"
 	augroup osc52
-    	autocmd!
-    	autocmd TextYankPost * if v:event.operator ==# 'y' | call SendViaOSC52(getreg(v:event.regname)) | endif
+		autocmd!
+		autocmd TextYankPost * if v:event.operator ==# 'y' | call SendViaOSC52(getreg(v:event.regname)) | endif
 	augroup END
 endif
 
@@ -63,8 +63,8 @@ endif
 let s:clip = "/mnt/c/Windows/System32/clip.exe"
 if executable(s:clip)
 	augroup WSLYank
-    	autocmd!
-    	autocmd TextYankPost * if v:event.operator ==# 'y' | call system(s:clip, @0) | endif
+		autocmd!
+		autocmd TextYankPost * if v:event.operator ==# 'y' | call system(s:clip, @0) | endif
 	augroup END
 endif
 

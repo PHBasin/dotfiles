@@ -12,9 +12,8 @@ backup() {
 for name in *; do
   if [ ! -a "$name" ]; then
     target="$HOME/.$name"
-    if [[ ! "$name" =~ '\.sh$' ]]; then
+    if [ ! -x "$name" ]; then
       backup $target
-
       if [ ! -e "$target" ]; then
         echo "-----> Symlinking your new $target"
         ln -s "$PWD/$name" "$target"

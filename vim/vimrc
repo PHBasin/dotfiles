@@ -11,6 +11,11 @@ compiler gcc
 " Enable syntax highlighting
 syntax on
 colorscheme fancy
+if exists('+termguicolors')
+	set termguicolors
+else
+	set t_Co=256
+endif
 
 " Display line numbers on the left
 set number
@@ -22,8 +27,9 @@ set mouse=a
 set backspace=indent,eol,start
 
 " Enable autoindent
-" set autoindent
-" set smartindent
+set autoindent
+set smartindent
+set pastetoggle=<F3>
 
 " Spaces are used
 set shiftwidth=2

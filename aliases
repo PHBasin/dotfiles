@@ -1,53 +1,51 @@
 # Get External IP / local IPs
-alias ip="curl ipinfo.io/ip"
+alias ipconfig='curl ipinfo.io/ip'
 alias ips="ifconfig -a | perl -nle'/(\d+\.\d+\.\d+\.\d+)/ && print $1'"
-alias speedtest="wget -O /dev/null http://speedtest.wdc01.softlayer.com/downloads/test10.zip"
+alias ip='ip -color=auto'
+alias speedtest='wget -O /dev/null http://speedtest.wdc01.softlayer.com/downloads/test10.zip'
 
 # Open subsystem folder with GUI
-if [[ `uname -a` =~ "microsoft" ]]; then
-	alias open="explorer.exe"
-elif [[ `uname -a` =~ "Linux" ]]; then
-	alias open="xdg-open"
+if [[ `uname -a` =~ 'microsoft' ]]; then
+	alias open='explorer.exe'
+elif [[ `uname -a` =~ 'Linux' ]]; then
+	alias open='xdg-open'
 fi
 
-# Python command
-alias py="python3"
-
 # Piscine shortcuts
-alias norminette="~/.norminette/norminette.rb"
-alias ptest="bash ~/piscine-test/test.sh"
+#alias norminette='~/.norminette/norminette.rb'
+#alias ptest='bash ~/piscine-test/test.sh'
 
 # Compiler
-alias gcc="gcc -Wall -Werror -Wextra"
+alias gcc='gcc -Wall -Werror -Wextra'
 
 # Quickly serve the current directory as HTTP
-alias serve="ruby -run -e httpd . -p 8000"
+alias serve='ruby -run -e httpd . -p 8000'
 
 # Ruby on Rails generators
-alias rrg="rails generate"
-alias rrga="rails g assets"
-alias rrgc="rails g controller"
-alias rrgd="rails g decorator"
-alias rrgg="rails g generator"
-alias rrgh="rails g helper"
-alias rrgma="rails g mailer"
-alias rrgmi="rails g migration"
-alias rrgmo="rails g model"
-alias rrgt="rails g task"
+alias rrg='rails generate'
+alias rrga='rails g assets'
+alias rrgc='rails g controller'
+alias rrgd='rails g decorator'
+alias rrgg='rails g generator'
+alias rrgh='rails g helper'
+alias rrgma='rails g mailer'
+alias rrgmi='rails g migration'
+alias rrgmo='rails g model'
+alias rrgt='rails g task'
 
 # Ruby on Rails commands
-alias rra="rails application"
-alias rrc="rails console"
-alias rrd="rails destroy"
-alias rrn="rails new"
-alias rrpr="rails profiler"
-alias rrpl="rails plugin"
-alias rrs="rails server"
+alias rra='rails application'
+alias rrc='rails console'
+alias rrd='rails destroy'
+alias rrn='rails new'
+alias rrpr='rails profiler'
+alias rrpl='rails plugin'
+alias rrs='rails server'
 
 # Ruby on Rails database tasks
-alias rrdc="rake db:create"
-alias rrdd="rake db:drop"
-alias rrdm="rake db:migrate"
-alias rrdr="rake db:reset"
-alias rrds="rake db:seed"
-alias rrdsu="rake db:setup"
+alias rrdc='rake db:create'
+alias rrdd='rake db:drop'
+alias rrdm='rake db:migrate'
+alias rrdr='rake db:reset'
+alias rrds='rake db:seed'
+alias rrdsu='rake db:setup'

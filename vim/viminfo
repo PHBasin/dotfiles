@@ -12,7 +12,7 @@
 ~h
 # Command Line History (newest to oldest):
 :x
-|2,0,1617111303,,"x"
+|2,0,1617197154,,"x"
 
 # Search String History (newest to oldest):
 
@@ -25,14 +25,29 @@
 # Registers:
 
 # File marks:
-'0  1  0  ~/dotfiles/aliases
-|4,48,1,0,1617111303,"~/dotfiles/aliases"
+'0  15  28  ~/dotfiles/install.sh
+|4,48,15,28,1617197154,"~/dotfiles/install.sh"
+'1  1  0  ~/dotfiles/aliases
+|4,49,1,0,1617111303,"~/dotfiles/aliases"
 
 # Jumplist (newest first):
+-'  15  28  ~/dotfiles/install.sh
+|4,39,15,28,1617197154,"~/dotfiles/install.sh"
+-'  1  0  ~/dotfiles/install.sh
+|4,39,1,0,1617196991,"~/dotfiles/install.sh"
+-'  1  0  ~/dotfiles/aliases
+|4,39,1,0,1617111303,"~/dotfiles/aliases"
 -'  1  0  ~/dotfiles/aliases
 |4,39,1,0,1617111303,"~/dotfiles/aliases"
 
 # History of marks within files (newest to oldest):
+
+> ~/dotfiles/install.sh
+	*	1617197153	0
+	"	15	28
+	^	15	29
+	.	15	28
+	+	15	28
 
 > ~/dotfiles/aliases
 	*	1617111303	0

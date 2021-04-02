@@ -78,10 +78,10 @@ let s:lightgrey   = { "gui": "#a0a0a0", "cterm": "145" }
 let s:darkgrey    = { "gui": "#646464", "cterm": "239" }
 let s:warmgrey    = { "gui": "#5a5a5a", "cterm": "59" }
 
-let s:pink        = { "gui": "#e06c75", "cterm": "168" }
+let s:pink        = { "gui": "#e06c75", "cterm": "167" }
 let s:green       = { "gui": "#75e06c", "cterm": "120" }
 let s:aqua        = { "gui": "#6ce0d7", "cterm": "81" }
-let s:yellow      = { "gui": "#e0d76c", "cterm": "186" }
+let s:yellow      = { "gui": "#e0d76c", "cterm": "185" }
 let s:orange      = { "gui": "#e09d6c", "cterm": "208" }
 let s:purple      = { "gui": "#d76ce0", "cterm": "176" }
 let s:red         = { "gui": "#e64b4b", "cterm": "131" }
@@ -486,7 +486,7 @@ endif
 
 
 if !exists( 'g:ophigh_color' )
-  let g:ophigh_color = "168"
+  let g:ophigh_color = "167"
 endif
 
 if !exists( 'g:ophigh_filetypes_to_ignore' )

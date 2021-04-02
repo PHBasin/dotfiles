@@ -10,11 +10,18 @@
 
 # hlsearch on (H) or off (h):
 ~h
+# Last Search Pattern:
+~MSle0~/168
+
 # Command Line History (newest to oldest):
 :x
-|2,0,1617197154,,"x"
+|2,0,1617395229,,"x"
+:q
+|2,0,1617197862,,"q"
 
 # Search String History (newest to oldest):
+?/168
+|2,1,1617395088,47,"168"
 
 # Expression History (newest to oldest):
 
@@ -25,30 +32,255 @@
 # Registers:
 
 # File marks:
-'0  15  28  ~/dotfiles/install.sh
-|4,48,15,28,1617197154,"~/dotfiles/install.sh"
-'1  1  0  ~/dotfiles/aliases
-|4,49,1,0,1617111303,"~/dotfiles/aliases"
+'0  24  0  ~/dotfiles/install.sh
+|4,48,24,0,1617395229,"~/dotfiles/install.sh"
+'1  1  0  ~/.aliases
+|4,49,1,0,1617395127,"~/.aliases"
+'2  489  26  ~/dotfiles/vim/colors/fancy.vim
+|4,50,489,26,1617395097,"~/dotfiles/vim/colors/fancy.vim"
+'3  1  0  ~/.aliases
+|4,51,1,0,1617395082,"~/.aliases"
+'4  84  52  ~/dotfiles/vim/colors/fancy.vim
+|4,52,84,52,1617395066,"~/dotfiles/vim/colors/fancy.vim"
+'5  84  52  ~/dotfiles/vim/colors/fancy.vim
+|4,53,84,52,1617395066,"~/dotfiles/vim/colors/fancy.vim"
+'6  81  50  ~/dotfiles/vim/colors/fancy.vim
+|4,54,81,50,1617395019,"~/dotfiles/vim/colors/fancy.vim"
+'7  81  50  ~/dotfiles/vim/colors/fancy.vim
+|4,55,81,50,1617395019,"~/dotfiles/vim/colors/fancy.vim"
+'8  81  50  ~/dotfiles/vim/colors/fancy.vim
+|4,56,81,50,1617395019,"~/dotfiles/vim/colors/fancy.vim"
+'9  81  50  ~/dotfiles/vim/colors/fancy.vim
+|4,57,81,50,1617395019,"~/dotfiles/vim/colors/fancy.vim"
 
 # Jumplist (newest first):
--'  15  28  ~/dotfiles/install.sh
-|4,39,15,28,1617197154,"~/dotfiles/install.sh"
+-'  24  0  ~/dotfiles/install.sh
+|4,39,24,0,1617395229,"~/dotfiles/install.sh"
 -'  1  0  ~/dotfiles/install.sh
-|4,39,1,0,1617196991,"~/dotfiles/install.sh"
--'  1  0  ~/dotfiles/aliases
-|4,39,1,0,1617111303,"~/dotfiles/aliases"
--'  1  0  ~/dotfiles/aliases
-|4,39,1,0,1617111303,"~/dotfiles/aliases"
+|4,39,1,0,1617395146,"~/dotfiles/install.sh"
+-'  1  0  ~/.aliases
+|4,39,1,0,1617395127,"~/.aliases"
+-'  1  0  ~/.aliases
+|4,39,1,0,1617395127,"~/.aliases"
+-'  489  26  ~/dotfiles/vim/colors/fancy.vim
+|4,39,489,26,1617395097,"~/dotfiles/vim/colors/fancy.vim"
+-'  489  26  ~/dotfiles/vim/colors/fancy.vim
+|4,39,489,26,1617395097,"~/dotfiles/vim/colors/fancy.vim"
+-'  489  26  ~/dotfiles/vim/colors/fancy.vim
+|4,39,489,26,1617395097,"~/dotfiles/vim/colors/fancy.vim"
+-'  489  26  ~/dotfiles/vim/colors/fancy.vim
+|4,39,489,26,1617395097,"~/dotfiles/vim/colors/fancy.vim"
+-'  1  0  ~/dotfiles/vim/colors/fancy.vim
+|4,39,1,0,1617395088,"~/dotfiles/vim/colors/fancy.vim"
+-'  1  0  ~/dotfiles/vim/colors/fancy.vim
+|4,39,1,0,1617395088,"~/dotfiles/vim/colors/fancy.vim"
+-'  1  0  ~/dotfiles/vim/colors/fancy.vim
+|4,39,1,0,1617395088,"~/dotfiles/vim/colors/fancy.vim"
+-'  1  0  ~/dotfiles/vim/colors/fancy.vim
+|4,39,1,0,1617395088,"~/dotfiles/vim/colors/fancy.vim"
+-'  1  0  ~/.aliases
+|4,39,1,0,1617395082,"~/.aliases"
+-'  1  0  ~/.aliases
+|4,39,1,0,1617395082,"~/.aliases"
+-'  1  0  ~/.aliases
+|4,39,1,0,1617395082,"~/.aliases"
+-'  1  0  ~/.aliases
+|4,39,1,0,1617395082,"~/.aliases"
+-'  84  52  ~/dotfiles/vim/colors/fancy.vim
+|4,39,84,52,1617395066,"~/dotfiles/vim/colors/fancy.vim"
+-'  84  52  ~/dotfiles/vim/colors/fancy.vim
+|4,39,84,52,1617395066,"~/dotfiles/vim/colors/fancy.vim"
+-'  84  52  ~/dotfiles/vim/colors/fancy.vim
+|4,39,84,52,1617395066,"~/dotfiles/vim/colors/fancy.vim"
+-'  84  52  ~/dotfiles/vim/colors/fancy.vim
+|4,39,84,52,1617395066,"~/dotfiles/vim/colors/fancy.vim"
+-'  84  52  ~/dotfiles/vim/colors/fancy.vim
+|4,39,84,52,1617395066,"~/dotfiles/vim/colors/fancy.vim"
+-'  84  52  ~/dotfiles/vim/colors/fancy.vim
+|4,39,84,52,1617395066,"~/dotfiles/vim/colors/fancy.vim"
+-'  84  52  ~/dotfiles/vim/colors/fancy.vim
+|4,39,84,52,1617395066,"~/dotfiles/vim/colors/fancy.vim"
+-'  84  52  ~/dotfiles/vim/colors/fancy.vim
+|4,39,84,52,1617395066,"~/dotfiles/vim/colors/fancy.vim"
+-'  84  52  ~/dotfiles/vim/colors/fancy.vim
+|4,39,84,52,1617395066,"~/dotfiles/vim/colors/fancy.vim"
+-'  84  52  ~/dotfiles/vim/colors/fancy.vim
+|4,39,84,52,1617395066,"~/dotfiles/vim/colors/fancy.vim"
+-'  84  52  ~/dotfiles/vim/colors/fancy.vim
+|4,39,84,52,1617395066,"~/dotfiles/vim/colors/fancy.vim"
+-'  84  52  ~/dotfiles/vim/colors/fancy.vim
+|4,39,84,52,1617395066,"~/dotfiles/vim/colors/fancy.vim"
+-'  1  0  ~/dotfiles/vim/colors/fancy.vim
+|4,39,1,0,1617395020,"~/dotfiles/vim/colors/fancy.vim"
+-'  1  0  ~/dotfiles/vim/colors/fancy.vim
+|4,39,1,0,1617395020,"~/dotfiles/vim/colors/fancy.vim"
+-'  1  0  ~/dotfiles/vim/colors/fancy.vim
+|4,39,1,0,1617395020,"~/dotfiles/vim/colors/fancy.vim"
+-'  1  0  ~/dotfiles/vim/colors/fancy.vim
+|4,39,1,0,1617395020,"~/dotfiles/vim/colors/fancy.vim"
+-'  1  0  ~/dotfiles/vim/colors/fancy.vim
+|4,39,1,0,1617395020,"~/dotfiles/vim/colors/fancy.vim"
+-'  1  0  ~/dotfiles/vim/colors/fancy.vim
+|4,39,1,0,1617395020,"~/dotfiles/vim/colors/fancy.vim"
+-'  1  0  ~/dotfiles/vim/colors/fancy.vim
+|4,39,1,0,1617395020,"~/dotfiles/vim/colors/fancy.vim"
+-'  1  0  ~/dotfiles/vim/colors/fancy.vim
+|4,39,1,0,1617395020,"~/dotfiles/vim/colors/fancy.vim"
+-'  81  50  ~/dotfiles/vim/colors/fancy.vim
+|4,39,81,50,1617395019,"~/dotfiles/vim/colors/fancy.vim"
+-'  81  50  ~/dotfiles/vim/colors/fancy.vim
+|4,39,81,50,1617395019,"~/dotfiles/vim/colors/fancy.vim"
+-'  81  50  ~/dotfiles/vim/colors/fancy.vim
+|4,39,81,50,1617395019,"~/dotfiles/vim/colors/fancy.vim"
+-'  81  50  ~/dotfiles/vim/colors/fancy.vim
+|4,39,81,50,1617395019,"~/dotfiles/vim/colors/fancy.vim"
+-'  81  50  ~/dotfiles/vim/colors/fancy.vim
+|4,39,81,50,1617395019,"~/dotfiles/vim/colors/fancy.vim"
+-'  81  50  ~/dotfiles/vim/colors/fancy.vim
+|4,39,81,50,1617395019,"~/dotfiles/vim/colors/fancy.vim"
+-'  81  50  ~/dotfiles/vim/colors/fancy.vim
+|4,39,81,50,1617395019,"~/dotfiles/vim/colors/fancy.vim"
+-'  81  50  ~/dotfiles/vim/colors/fancy.vim
+|4,39,81,50,1617395019,"~/dotfiles/vim/colors/fancy.vim"
+-'  81  50  ~/dotfiles/vim/colors/fancy.vim
+|4,39,81,50,1617395019,"~/dotfiles/vim/colors/fancy.vim"
+-'  81  50  ~/dotfiles/vim/colors/fancy.vim
+|4,39,81,50,1617395019,"~/dotfiles/vim/colors/fancy.vim"
+-'  81  50  ~/dotfiles/vim/colors/fancy.vim
+|4,39,81,50,1617395019,"~/dotfiles/vim/colors/fancy.vim"
+-'  81  50  ~/dotfiles/vim/colors/fancy.vim
+|4,39,81,50,1617395019,"~/dotfiles/vim/colors/fancy.vim"
+-'  81  50  ~/dotfiles/vim/colors/fancy.vim
+|4,39,81,50,1617395019,"~/dotfiles/vim/colors/fancy.vim"
+-'  81  50  ~/dotfiles/vim/colors/fancy.vim
+|4,39,81,50,1617395019,"~/dotfiles/vim/colors/fancy.vim"
+-'  81  50  ~/dotfiles/vim/colors/fancy.vim
+|4,39,81,50,1617395019,"~/dotfiles/vim/colors/fancy.vim"
+-'  81  50  ~/dotfiles/vim/colors/fancy.vim
+|4,39,81,50,1617395019,"~/dotfiles/vim/colors/fancy.vim"
+-'  81  50  ~/dotfiles/vim/colors/fancy.vim
+|4,39,81,50,1617395019,"~/dotfiles/vim/colors/fancy.vim"
+-'  81  50  ~/dotfiles/vim/colors/fancy.vim
+|4,39,81,50,1617395019,"~/dotfiles/vim/colors/fancy.vim"
+-'  81  50  ~/dotfiles/vim/colors/fancy.vim
+|4,39,81,50,1617395019,"~/dotfiles/vim/colors/fancy.vim"
+-'  81  50  ~/dotfiles/vim/colors/fancy.vim
+|4,39,81,50,1617395019,"~/dotfiles/vim/colors/fancy.vim"
+-'  1  0  ~/dotfiles/vim/colors/fancy.vim
+|4,39,1,0,1617394982,"~/dotfiles/vim/colors/fancy.vim"
+-'  1  0  ~/dotfiles/vim/colors/fancy.vim
+|4,39,1,0,1617394982,"~/dotfiles/vim/colors/fancy.vim"
+-'  1  0  ~/dotfiles/vim/colors/fancy.vim
+|4,39,1,0,1617394982,"~/dotfiles/vim/colors/fancy.vim"
+-'  1  0  ~/dotfiles/vim/colors/fancy.vim
+|4,39,1,0,1617394982,"~/dotfiles/vim/colors/fancy.vim"
+-'  1  0  ~/dotfiles/vim/colors/fancy.vim
+|4,39,1,0,1617394982,"~/dotfiles/vim/colors/fancy.vim"
+-'  1  0  ~/dotfiles/vim/colors/fancy.vim
+|4,39,1,0,1617394982,"~/dotfiles/vim/colors/fancy.vim"
+-'  1  0  ~/dotfiles/vim/colors/fancy.vim
+|4,39,1,0,1617394982,"~/dotfiles/vim/colors/fancy.vim"
+-'  1  0  ~/dotfiles/vim/colors/fancy.vim
+|4,39,1,0,1617394982,"~/dotfiles/vim/colors/fancy.vim"
+-'  530  0  ~/dotfiles/vim/colors/fancy.vim
+|4,39,530,0,1617198380,"~/dotfiles/vim/colors/fancy.vim"
+-'  530  0  ~/dotfiles/vim/colors/fancy.vim
+|4,39,530,0,1617198380,"~/dotfiles/vim/colors/fancy.vim"
+-'  530  0  ~/dotfiles/vim/colors/fancy.vim
+|4,39,530,0,1617198380,"~/dotfiles/vim/colors/fancy.vim"
+-'  530  0  ~/dotfiles/vim/colors/fancy.vim
+|4,39,530,0,1617198380,"~/dotfiles/vim/colors/fancy.vim"
+-'  530  0  ~/dotfiles/vim/colors/fancy.vim
+|4,39,530,0,1617198380,"~/dotfiles/vim/colors/fancy.vim"
+-'  530  0  ~/dotfiles/vim/colors/fancy.vim
+|4,39,530,0,1617198380,"~/dotfiles/vim/colors/fancy.vim"
+-'  530  0  ~/dotfiles/vim/colors/fancy.vim
+|4,39,530,0,1617198380,"~/dotfiles/vim/colors/fancy.vim"
+-'  530  0  ~/dotfiles/vim/colors/fancy.vim
+|4,39,530,0,1617198380,"~/dotfiles/vim/colors/fancy.vim"
+-'  530  0  ~/dotfiles/vim/colors/fancy.vim
+|4,39,530,0,1617198380,"~/dotfiles/vim/colors/fancy.vim"
+-'  530  0  ~/dotfiles/vim/colors/fancy.vim
+|4,39,530,0,1617198380,"~/dotfiles/vim/colors/fancy.vim"
+-'  530  0  ~/dotfiles/vim/colors/fancy.vim
+|4,39,530,0,1617198380,"~/dotfiles/vim/colors/fancy.vim"
+-'  530  0  ~/dotfiles/vim/colors/fancy.vim
+|4,39,530,0,1617198380,"~/dotfiles/vim/colors/fancy.vim"
+-'  530  0  ~/dotfiles/vim/colors/fancy.vim
+|4,39,530,0,1617198380,"~/dotfiles/vim/colors/fancy.vim"
+-'  530  0  ~/dotfiles/vim/colors/fancy.vim
+|4,39,530,0,1617198380,"~/dotfiles/vim/colors/fancy.vim"
+-'  530  0  ~/dotfiles/vim/colors/fancy.vim
+|4,39,530,0,1617198380,"~/dotfiles/vim/colors/fancy.vim"
+-'  530  0  ~/dotfiles/vim/colors/fancy.vim
+|4,39,530,0,1617198380,"~/dotfiles/vim/colors/fancy.vim"
+-'  530  0  ~/dotfiles/vim/colors/fancy.vim
+|4,39,530,0,1617198380,"~/dotfiles/vim/colors/fancy.vim"
+-'  530  0  ~/dotfiles/vim/colors/fancy.vim
+|4,39,530,0,1617198380,"~/dotfiles/vim/colors/fancy.vim"
+-'  530  0  ~/dotfiles/vim/colors/fancy.vim
+|4,39,530,0,1617198380,"~/dotfiles/vim/colors/fancy.vim"
+-'  530  0  ~/dotfiles/vim/colors/fancy.vim
+|4,39,530,0,1617198380,"~/dotfiles/vim/colors/fancy.vim"
+-'  530  0  ~/dotfiles/vim/colors/fancy.vim
+|4,39,530,0,1617198380,"~/dotfiles/vim/colors/fancy.vim"
+-'  530  0  ~/dotfiles/vim/colors/fancy.vim
+|4,39,530,0,1617198380,"~/dotfiles/vim/colors/fancy.vim"
+-'  530  0  ~/dotfiles/vim/colors/fancy.vim
+|4,39,530,0,1617198380,"~/dotfiles/vim/colors/fancy.vim"
+-'  530  0  ~/dotfiles/vim/colors/fancy.vim
+|4,39,530,0,1617198380,"~/dotfiles/vim/colors/fancy.vim"
+-'  530  0  ~/dotfiles/vim/colors/fancy.vim
+|4,39,530,0,1617198380,"~/dotfiles/vim/colors/fancy.vim"
+-'  530  0  ~/dotfiles/vim/colors/fancy.vim
+|4,39,530,0,1617198380,"~/dotfiles/vim/colors/fancy.vim"
+-'  530  0  ~/dotfiles/vim/colors/fancy.vim
+|4,39,530,0,1617198380,"~/dotfiles/vim/colors/fancy.vim"
+-'  530  0  ~/dotfiles/vim/colors/fancy.vim
+|4,39,530,0,1617198380,"~/dotfiles/vim/colors/fancy.vim"
+-'  1  0  ~/dotfiles/vim/colors/fancy.vim
+|4,39,1,0,1617197924,"~/dotfiles/vim/colors/fancy.vim"
+-'  1  0  ~/dotfiles/vim/colors/fancy.vim
+|4,39,1,0,1617197924,"~/dotfiles/vim/colors/fancy.vim"
+-'  1  0  ~/dotfiles/vim/colors/fancy.vim
+|4,39,1,0,1617197924,"~/dotfiles/vim/colors/fancy.vim"
+-'  1  0  ~/dotfiles/vim/colors/fancy.vim
+|4,39,1,0,1617197924,"~/dotfiles/vim/colors/fancy.vim"
+-'  1  0  ~/dotfiles/vim/colors/fancy.vim
+|4,39,1,0,1617197924,"~/dotfiles/vim/colors/fancy.vim"
+-'  1  0  ~/dotfiles/vim/colors/fancy.vim
+|4,39,1,0,1617197924,"~/dotfiles/vim/colors/fancy.vim"
+-'  1  0  ~/dotfiles/vim/colors/fancy.vim
+|4,39,1,0,1617197924,"~/dotfiles/vim/colors/fancy.vim"
+-'  1  0  ~/dotfiles/vim/colors/fancy.vim
+|4,39,1,0,1617197924,"~/dotfiles/vim/colors/fancy.vim"
 
 # History of marks within files (newest to oldest):
 
 > ~/dotfiles/install.sh
-	*	1617197153	0
-	"	15	28
+	*	1617395227	0
+	"	24	0
 	^	15	29
 	.	15	28
 	+	15	28
 
+> ~/.aliases
+	*	1617395125	0
+	"	1	0
+
+> ~/dotfiles/vim/colors/fancy.vim
+	*	1617395096	0
+	"	489	26
+	^	84	53
+	.	489	26
+	+	81	52
+	+	84	52
+	+	489	26
+
 > ~/dotfiles/aliases
-	*	1617111303	0
+	*	1617197790	0
+	"	3	0
+
+> ~/dotfiles/zshrc
+	*	1617197784	0
 	"	1	0

@@ -5,9 +5,6 @@ else
   echoerr "Sorry, this version of (g)vim was not compiled with +multi_byte"
 endif
 
-" Compiler
-compiler gcc
-
 " Enable syntax highlighting
 syntax on
 colorscheme fancy
@@ -16,6 +13,9 @@ if exists('+termguicolors')
 else
 	set t_Co=256
 endif
+
+" Compiler
+compiler gcc
 
 " Display line numbers on the left
 set number
@@ -47,7 +47,7 @@ inoremap '<Tab>	''<left>
 inoremap (<Tab>	()<left>
 inoremap <<Tab>	<><left>
 inoremap [<Tab>	[]<left>
-inoremap {<Tab>	{<CR>}<ESC>O
+inoremap {<Tab>	{}<left>
 inoremap {;		{<CR>};<ESC>O
 
 " Change .viminfo location

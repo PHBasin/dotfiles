@@ -3,10 +3,8 @@ ZSH=$HOME/.oh-my-zsh
 # You can change the theme with another one from https://github.com/robbyrussell/oh-my-zsh/wiki/themes
 ZSH_THEME="robbyrussell"
 
-# Define a custom file for history
+# Define a custom file for history and zcompdump
 export HISTFILE="${HOME}/.oh-my-zsh/cache/.zsh_history"
-
-# Define a custom file for compdump
 export ZSH_COMPDUMP="${HOME}/.oh-my-zsh/cache/zcompdump-${HOST}-${ZSH_VERSION}"
 
 # Useful oh-my-zsh plugins for Le Wagon bootcamps

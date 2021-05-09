@@ -21,6 +21,10 @@ unalias rm # No interactive rm by default (brought by plugins/common-aliases)
 # Store your own aliases in the ~/.aliases file and load the here.
 [[ -f "$HOME/.aliases" ]] && source "$HOME/.aliases"
 
+# Define temporary files and directories
+export TEMP=$(mktemp /tmp/tempfile.XXXXXXXX)
+export TEMPDIR=$(mktemp -d /tmp/tempdir.XXXXXXXX)
+
 # Encoding stuff for the terminal
 export LANG=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
@@ -35,9 +39,9 @@ fi
 #type -a rbenv > /dev/null && eval "$(rbenv init -)"
 
 # Load pyenv (to manage your Python versions)
-#export PATH="${HOME}/.pyenv/bin:${PATH}" # Needed for Linux/WSL
-#export PYENV_VIRTUALENV_DISABLE_PROMPT=1 # https://github.com/pyenv/pyenv-virtualenv/issues/135
-#type -a pyenv > /dev/null && eval "$(pyenv init -)" && eval "$(pyenv virtualenv-init -)" && RPROMPT+='[🐍 $(pyenv_prompt_info)]'
+export PATH="${HOME}/.pyenv/shims:${PATH}" # Needed for Linux/WSL
+export PYENV_VIRTUALENV_DISABLE_PROMPT=1 # https://github.com/pyenv/pyenv-virtualenv/issues/135
+type -a pyenv > /dev/null && eval "$(pyenv init -)" && eval "$(pyenv virtualenv-init -)" && RPROMPT+='[🐍 $(pyenv_prompt_info)]'
 
 # Load nvm (to manage your node versions)
 #export NVM_DIR="$HOME/.nvm"

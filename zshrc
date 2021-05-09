@@ -8,7 +8,7 @@ export HISTFILE="${HOME}/.oh-my-zsh/cache/.zsh_history"
 export ZSH_COMPDUMP="${HOME}/.oh-my-zsh/cache/zcompdump-${HOST}-${ZSH_VERSION}"
 
 # Useful oh-my-zsh plugins for Le Wagon bootcamps
-plugins=(git gitfast last-working-dir common-aliases zsh-syntax-highlighting history-substring-search ssh-agent colored-man-pages)
+plugins=(git gitfast last-working-dir common-aliases zsh-syntax-highlighting history-substring-search pyenv ssh-agent colored-man-pages)
 
 # (macOS-only) Prevent Homebrew from reporting - https://github.com/Homebrew/brew/blob/master/share/doc/homebrew/Analytics.md
 export HOMEBREW_NO_ANALYTICS=1

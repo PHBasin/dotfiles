@@ -32,6 +32,7 @@ set smartindent
 set pastetoggle=<F3>
 
 " Spaces are used
+set expandtab
 set shiftwidth=2
 set tabstop=2
 

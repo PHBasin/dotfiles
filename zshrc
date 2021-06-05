@@ -19,7 +19,7 @@ export HOMEBREW_NO_ANALYTICS=1
 
 # Define favorite browser
 if [[ `uname -a` =~ "microsoft" ]]; then
-	export BROWSER='"/mnt/c/Program Files/Google/Chrome/Application/chrome.exe"'
+  export BROWSER='"/mnt/c/Program Files/Google/Chrome/Application/chrome.exe"'
 fi
 
 # Actually load Oh-My-Zsh

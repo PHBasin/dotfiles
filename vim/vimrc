@@ -9,9 +9,9 @@ endif
 syntax on
 colorscheme fancy
 if exists('+termguicolors')
-	set termguicolors
+  set termguicolors
 else
-	set t_Co=256
+  set t_Co=256
 endif
 
 " Compiler
@@ -32,8 +32,9 @@ set smartindent
 set pastetoggle=<F3>
 
 " Spaces are used
-set shiftwidth=2
-set tabstop=2
+set expandtab     "spaces instead of tab
+set shiftwidth=2  "number of spaces used for (auto)indent
+set tabstop=2     "number of spaces for tab
 
 " I want to find what I'm looking for
 set hlsearch
@@ -42,13 +43,13 @@ set hlsearch
 set showmatch
 
 " Auto-insert closing brackets
-inoremap "<Tab>	""<left>
-inoremap '<Tab>	''<left>
-inoremap (<Tab>	()<left>
-inoremap <<Tab>	<><left>
-inoremap [<Tab>	[]<left>
-inoremap {<Tab>	{}<left>
-inoremap {;		{<CR>};<ESC>O
+inoremap "<Tab> ""<left>
+inoremap '<Tab> ''<left>
+inoremap (<Tab> ()<left>
+inoremap <<Tab> <><left>
+inoremap [<Tab> []<left>
+inoremap {<Tab> {}<left>
+inoremap {; {<CR>};<ESC>O
 
 " Change .viminfo location
 set viminfo+=n~/.vim/viminfo
@@ -59,19 +60,19 @@ au BufWritePre * "%s/\s\+$//e"
 " ChromeOS yank support
 let g:os = substitute(system('uname -n'), '\n', '', '')
 if g:os == "penguin"
-	augroup osc52
-		autocmd!
-		autocmd TextYankPost * if v:event.operator ==# 'y' | call SendViaOSC52(getreg(v:event.regname)) | endif
-	augroup END
+  augroup osc52
+    autocmd!
+    autocmd TextYankPost * if v:event.operator ==# 'y' | call SendViaOSC52(getreg(v:event.regname)) | endif
+  augroup END
 endif
 
 " WSL yank support
 let s:clip = "/mnt/c/Windows/System32/clip.exe"
 if executable(s:clip)
-	augroup WSLYank
-		autocmd!
-		autocmd TextYankPost * if v:event.operator ==# 'y' | call system(s:clip, @0) | endif
-	augroup END
+  augroup WSLYank
+    autocmd!
+    autocmd TextYankPost * if v:event.operator ==# 'y' | call system(s:clip, @0) | endif
+  augroup END
 endif
 
 " No history or bookmarks

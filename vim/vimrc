@@ -33,8 +33,8 @@ set pastetoggle=<F3>
 
 " Spaces are used
 set expandtab     "spaces instead of tab
-set shiftwidth=2  "number of spaces used for (auto)indent
-set tabstop=2     "number of spaces for tab
+set shiftwidth=2  "number of spaces used
+set tabstop=2     "display width of tab
 
 " I want to find what I'm looking for
 set hlsearch

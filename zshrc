@@ -7,8 +7,8 @@ ZSH_THEME="robbyrussell"
 plugins=(git gitfast last-working-dir common-aliases zsh-syntax-highlighting history-substring-search colored-man-pages pyenv ssh-agent)
 
 # Define a custom file for history and zcompdump
-export HISTFILE="${HOME}/.oh-my-zsh/cache/.zsh_history"
-export ZSH_COMPDUMP="${HOME}/.oh-my-zsh/cache/zcompdump-${HOST}-${ZSH_VERSION}"
+export HISTFILE="${ZSH}/cache/.zsh_history"
+export ZSH_COMPDUMP="${ZSH}/cache/zcompdump-${HOST}-${ZSH_VERSION}"
 
 # Define temporary files and directories
 export TEMP=$(mktemp /tmp/tempfile.XXXXXXXX)

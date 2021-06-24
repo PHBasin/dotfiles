@@ -1,8 +1,8 @@
 # Get External IP / local IPs
-alias ipconfig='curl ipinfo.io/ip'
-alias ips="ifconfig -a | perl -nle'/(\d+\.\d+\.\d+\.\d+)/ && print $1'"
 alias ip='ip -c'
-alias speedtest='wget -O /dev/null http://speedtest.wdc01.softlayer.com/downloads/test10.zip'
+alias ipconfig='curl ipinfo.io/ip'
+alias ips="ip a | perl -nle'/(\d+\.\d+\.\d+\.\d+)/ && print $1'"
+alias speedtest='curl -s https://raw.githubusercontent.com/sivel/speedtest-cli/master/speedtest.py | python -'
 
 # Open subsystem folder with GUI
 if [[ `uname -a` =~ 'microsoft' ]]; then

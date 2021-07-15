@@ -22,23 +22,18 @@ symlink() {
 for name in *; do
   if [ ! -a "$name" ]; then
     target="$HOME/.$name"
-    if [[ ! "$name" =~ '.sh' ]]; then
+    if [[ ! "$name" =~ '\.sh$' ]] && [ "$name" != 'README.md' ] && [[ "$name" != 'settings.json' ]] && [[ "$name" != 'config' ]]; then
       backup $target
       symlink $PWD/$name $target
     fi
   fi
 done
 
-REGULAR="\\033[0;39m"
-YELLOW="\\033[1;33m"
-GREEN="\\033[1;32m"
-
-# zsh plugins
+# Install zsh-syntax-highlighting plugin
 CURRENT_DIR=`pwd`
 ZSH_PLUGINS_DIR="$HOME/.oh-my-zsh/custom/plugins"
 mkdir -p "$ZSH_PLUGINS_DIR" && cd "$ZSH_PLUGINS_DIR"
 if [ ! -d "$ZSH_PLUGINS_DIR/zsh-syntax-highlighting" ]; then
-  echo "-----> Installing zsh plugin ..."
   git clone https://github.com/zsh-users/zsh-autosuggestions
   git clone git://github.com/zsh-users/zsh-syntax-highlighting.git
 fi

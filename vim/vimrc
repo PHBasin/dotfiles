@@ -1,0 +1,92 @@
+if has("multi_byte")
+  set encoding=utf-8
+  setglobal fileencoding=utf-8
+else
+  echoerr "Sorry, this version of (g)vim was not compiled with +multi_byte"
+endif
+
+" Enable syntax highlighting
+syntax on
+colorscheme fancy
+if exists('+termguicolors')
+  set termguicolors
+else
+  set t_Co=256
+endif
+
+" Compiler
+compiler gcc
+
+" Display line numbers on the left
+set number
+
+" Enable use of the mouse for all modes
+set mouse=a
+
+" Allow backspapcing over autoindent, line breaks and start of insert action
+set backspace=indent,eol,start
+
+" Enable autoindent
+set autoindent
+set smartindent
+set pastetoggle=<F3>
+
+" Spaces are used
+set expandtab     "spaces instead of tab
+set shiftwidth=2  "number of spaces used
+set tabstop=2     "display width of tab
+
+" I want to find what I'm looking for
+set hlsearch
+
+" Highlight the matching bracket
+set showmatch
+
+" Auto-insert closing brackets
+inoremap "<Tab> ""<left>
+inoremap '<Tab> ''<left>
+inoremap (<Tab> ()<left>
+inoremap <<Tab> <><left>
+inoremap [<Tab> []<left>
+inoremap {<Tab> {}<left>
+inoremap {; {<CR>};<ESC>O
+
+" Change .viminfo location
+set viminfo+=n~/.vim/viminfo
+
+if has("autocmd")
+  " StripTrailingWhitespaces
+  autocmd BufWritePre * Stripwhitespace
+
+" To spell check all git commit messages
+  au BufNewFile,BufRead COMMIT_EDITMSG set spell nonumber nolist wrap linebreak
+
+  " Set filetype tab settings
+  autocmd FileType python,doctest set ai ts=4 sw=4 sts=4 et
+
+  autocmd BufReadPost *
+  \ if line("'\"") > 1 && line("'\"") <= line("$") |
+  \   exe "normal! g`\"" |
+  \ endif
+endif
+
+" ChromeOS yank support
+let g:os = substitute(system('uname -n'), '\n', '', '')
+if g:os == "penguin"
+  augroup osc52
+    autocmd!
+    autocmd TextYankPost * if v:event.operator ==# 'y' | call SendViaOSC52(getreg(v:event.regname)) | endif
+  augroup END
+endif
+
+" WSL yank support
+let s:clip = "/mnt/c/Windows/System32/clip.exe"
+if executable(s:clip)
+  augroup WSLYank
+    autocmd!
+    autocmd TextYankPost * if v:event.operator ==# 'y' | call system(s:clip, @0) | endif
+  augroup END
+endif
+
+" No history or bookmarks
+let g:netrw_dirhistmax = 0

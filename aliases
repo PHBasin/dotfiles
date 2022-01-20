@@ -1,0 +1,16 @@
+# Get External IP / local IPs
+alias ip='ip -c'
+alias ipconfig='curl ipinfo.io/ip'
+alias ips="ip a | perl -nle'/(\d+\.\d+\.\d+\.\d+)/ && print $1'"
+alias speedtest='curl -s https://raw.githubusercontent.com/sivel/speedtest-cli/master/speedtest.py | python -'
+
+# Open subsystem folder with GUI
+if [[ `uname -a` =~ 'microsoft' ]]; then
+	alias open='explorer.exe'
+elif [[ `uname -a` =~ 'Linux' ]]; then
+	alias open='xdg-open'
+fi
+
+# Python
+alias serve='python -m SimpleHTTPServer'
+alias py='python'

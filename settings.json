@@ -62,10 +62,8 @@
   "python.pythonPath": "~/.pyenv/shims/python",
   "telemetry.telemetryLevel": "off",
   "window.restoreWindows": "none",
-  "workbench.iconTheme": "vscode-great-icons",
+  "workbench.iconTheme": "material-icon-theme",
   "workbench.settings.editor": "json",
-  "workbench.settings.openDefaultSettings": true,
-  "workbench.settings.useSplitJSON": true,
   "workbench.startupEditor": "newUntitledFile",
   "workbench.colorCustomizations": {
     "editorRuler.foreground": "#00000000"

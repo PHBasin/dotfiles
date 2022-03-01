@@ -55,3 +55,6 @@
 
 [credential]
 	helper = store
+
+[init]
+	templatedir = ~/.git_template

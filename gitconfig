@@ -63,4 +63,4 @@
 	helper = store
 
 [init]
-	templatedir = ~/.config/git
+	templatedir = ~/.git_template

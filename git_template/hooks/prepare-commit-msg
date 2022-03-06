@@ -1,9 +1,5 @@
 #!/bin/bash
 
-# COMMIT_MSG_FILE=$1
-COMMIT_SOURCE=$2
-SHA1=$3
-
 if [ -z "$BRANCHES_TO_SKIP" ]
 then
   BRANCHES_TO_SKIP=(master develop test)

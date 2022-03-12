@@ -10,15 +10,6 @@ plugins=(git gitfast last-working-dir common-aliases zsh-syntax-highlighting his
 export HISTFILE="${ZSH}/cache/.zsh_history"
 export ZSH_COMPDUMP="${ZSH}/cache/zcompdump-${HOST}-${ZSH_VERSION}"
 
-# Define temporary files and directories
-#export TEMP=$(mktemp /tmp/tempfile.XXXXXXXX)
-#export TEMPDIR=$(mktemp -d /tmp/tempdirXXXXXXXX)
-
-# Define favorite browser
-if [[ `uname -a` =~ "microsoft" ]]; then
-  export BROWSER='"/mnt/c/Program Files/Google/Chrome/Application/chrome.exe"'
-fi
-
 # Actually load Oh-My-Zsh
 source "${ZSH}/oh-my-zsh.sh"
 unalias rm

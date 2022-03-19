@@ -28,11 +28,15 @@ function dip {
   unset NAME IP OUT
 }
 
-alias dl='docker logs -f $1'
-alias ds='docker stop $(docker ps -q)'
-alias drm='docker rm $(docker ps -q)'
-alias dcu='docker-compose up -d'
-alias dcd='docker-compose down'
+alias dl='docker logs -f'
+alias dn='docker network ls'
+alias di='docker image ls -a'
+alias dc='docker container ls -a'
+alias dr='docker container run -d'
+alias ds='docker container stop $(docker ps -q)'
+alias drm='docker container rm $(docker ps -q)'
+alias dcu='docker compose up -d'
+alias dcd='docker compose down'
 
 # Kubernetes
 alias k='kubectl'

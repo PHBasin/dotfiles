@@ -29,7 +29,7 @@
 	stat = !git --no-pager diff --stat
 
 # Update the submodule to the last commit
-	pup = !git pull && git submodule update --recursive --remote
+	pup = !git pull && git submodule update --init --recursive --remote
 # If you want arguments to be passed to git pull
 # !f(){ git pull "$@" && git submodule update --init --recursive; }; f
 
@@ -56,11 +56,13 @@
 	mergeoptions = --no-edit
 
 [user]
-	email = pierre-henri.basin@orange.fr
+	email = pierre-henri.basin@soprasteria.com
 	name = PHBasin
 
 [credential]
 	helper = store
 
 [init]
-	templatedir = ~/.git_template
+	templatedir = ~/.config/git
+[credential "http://localhost"]
+	provider = generic

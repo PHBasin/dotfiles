@@ -15,6 +15,9 @@ fi
 alias serve='python -m SimpleHTTPServer'
 alias py='python'
 
+# Terraform
+alias tf='terraform'
+
 # Docker
 alias dnames="docker ps --format '{{.Names}}'"
 
@@ -28,9 +31,14 @@ function dip {
   unset NAME IP OUT
 }
 
-alias dl='docker logs -f $1'
-alias ds="docker stop $(docker ps -q)'
-alias drm='docker rm $(docker ps -q)'
-alias dcu='docker-compose up -d'
-alias dcd='docker-compose down'
+alias dl='docker logs -f'
+alias de='docker exec -it'
+alias dn='docker network ls'
+alias dv='docker volume ls'
+alias di='docker image ls -a'
+alias dc='docker container ls -a'
+alias ds='docker stop $(docker ps -q)'
+alias drm='docker rm $(dc -q)'
+alias dcu='docker compose up -d'
+alias dcd='docker compose down'
 

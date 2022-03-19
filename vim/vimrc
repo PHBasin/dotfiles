@@ -17,6 +17,9 @@ endif
 " Compiler
 compiler gcc
 
+" Open vim as sudo when I forgot
+cnoremap w!! w !sudo tee > /dev/null %
+
 " Display line numbers on the left
 set number
 
@@ -57,13 +60,10 @@ set viminfo+=n~/.vim/viminfo
 if has("autocmd")
   " StripTrailingWhitespaces
   autocmd BufWritePre * Stripwhitespace
-
-" To spell check all git commit messages
+  " To spell check all git commit messages
   au BufNewFile,BufRead COMMIT_EDITMSG set spell nonumber nolist wrap linebreak
-
   " Set filetype tab settings
   autocmd FileType python,doctest set ai ts=4 sw=4 sts=4 et
-
   autocmd BufReadPost *
   \ if line("'\"") > 1 && line("'\"") <= line("$") |
   \   exe "normal! g`\"" |

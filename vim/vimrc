@@ -7,11 +7,10 @@ endif
 
 " Enable syntax highlighting
 syntax on
-colorscheme fancy
+colorscheme codedark
+let g:codedark_italics = 1
 if exists('+termguicolors')
   set termguicolors
-else
-  set t_Co=256
 endif
 
 " Compiler

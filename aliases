@@ -1,7 +1,7 @@
 # Get External IP / local IPs
 alias ip='ip -c'
 alias ipconfig='curl ipinfo.io/ip'
-alias ips="ip a | perl -nle'/(\d+\.\d+\.\d+\.\d+)/ && print $1'"
+alias ips="ip a | perl -nle '/(\d+\.\d+\.\d+\.\d+)/ && print $1'"
 alias speedtest='curl -s https://raw.githubusercontent.com/sivel/speedtest-cli/master/speedtest.py | python -'
 
 # Open subsystem folder with GUI
@@ -31,14 +31,20 @@ function dip {
   unset NAME IP OUT
 }
 
-alias dl='docker logs -f'
 alias de='docker exec -it'
+alias dl='docker logs -f'
 alias dn='docker network ls'
-alias dv='docker volume ls'
-alias di='docker image ls -a'
-alias dc='docker container ls -a'
-alias ds='docker stop $(docker ps -q)'
-alias drm='docker rm $(dc -q)'
+alias di='docker image ls'
+alias dc='docker container ls'
+alias dr='docker container run -d'
+alias ds='docker container stop $(dc -q)'
+alias drm='docker container rm $(dc -aq)'
 alias dcu='docker compose up -d'
 alias dcd='docker compose down'
 
+# Kubernetes
+alias k='kubectl'
+alias ka='kubectl apply -f'
+alias kgp='kubectl get pods -o wide --show-labels'
+alias kgn='kubectl get nodes -o wide --show-labels'
+alias kga='kubectl get all -o wide --show-labels'

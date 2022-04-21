@@ -20,6 +20,7 @@
 	ci = commit
 	cm = commit -m
   ca = commit -am
+  cn = commit --amend --no-edit
 	co = checkout
 	d = !git --no-pager diff
 	dt  = difftool

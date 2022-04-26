@@ -19,6 +19,7 @@ alias py='python'
 alias tf='terraform'
 
 # Docker
+# https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/docker
 alias dnames="docker ps --format '{{.Names}}'"
 
 function dip {
@@ -34,15 +35,20 @@ function dip {
 alias de='docker exec -it'
 alias dl='docker logs -f'
 alias de='docker exec -it'
-alias dn='docker network ls'
-alias dv='docker volume ls'
-alias di='docker image ls'
-alias dc='docker container ls'
-alias dr='docker container run -d'
-alias ds='docker container stop $(dc -q)'
-alias drm='docker container rm $(dc -aq)'
-alias dcu='docker compose up -d'
-alias dcd='docker compose down'
+alias dstpa='dstp $(dcls -q)'
+alias drma='drm $(dcls -aq)'
+# alias dr='docker container run'
+# alias dstp='docker container stop'
+# alias drm='docker container rm'
+# alias dnls='docker network ls'
+# alias dvls='docker volume ls'
+# alias dils='docker image ls'
+# alias dcls='docker container ls'
+
+# Docker Compose
+# https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/docker-compose
+# alias dcupd='docker compose up -d'
+# alias dcdn='docker compose down'
 
 # Kubernetes
 alias k='kubectl'

@@ -12,7 +12,7 @@
 ~h
 # Command Line History (newest to oldest):
 :x
-|2,0,1654638286,,"x"
+|2,0,1654638555,,"x"
 
 # Search String History (newest to oldest):
 
@@ -23,102 +23,19 @@
 # Debug Line History (newest to oldest):
 
 # Registers:
-""1	LINE	0
-	
-|3,1,1,1,1,0,1654638254,""
-"2	LINE	0
-	# hlsearch on (H) or off (h):
-|3,0,2,1,1,0,1654638253,"# hlsearch on (H) or off (h):"
-"3	LINE	0
-	~h
-|3,0,3,1,1,0,1654638252,"~h"
-"4	LINE	0
-	# Command Line History (newest to oldest):
-|3,0,4,1,1,0,1654638252,"# Command Line History (newest to oldest):"
-"5	LINE	0
-	:x
-|3,0,5,1,1,0,1654638251,":x"
-"6	LINE	0
-	|2,0,1650962347,,"x"
-|3,0,6,1,1,0,1654638251,"|2,0,1650962347,,\"x\""
-"7	LINE	0
-	
-|3,0,7,1,1,0,1654638251,""
-"8	LINE	0
-	# Search String History (newest to oldest):
-|3,0,8,1,1,0,1654638251,"# Search String History (newest to oldest):"
-"9	LINE	0
-	
-|3,0,9,1,1,0,1654638251,""
-"-	CHAR	0
-	 
-|3,0,36,0,1,0,1650962049," "
 
 # File marks:
-'0  8  0  ~/dotfiles/.git/info/exclude
-|4,48,8,0,1654638286,"~/dotfiles/.git/info/exclude"
-'1  9  0  ~/dotfiles/vim/viminfo
-|4,49,9,0,1654638255,"~/dotfiles/vim/viminfo"
-'2  51  1  ~/dotfiles/aliases
-|4,50,51,1,1650962347,"~/dotfiles/aliases"
+'0  64  0  ~/dotfiles/gitconfig
+|4,48,64,0,1654638555,"~/dotfiles/gitconfig"
 
 # Jumplist (newest first):
--'  8  0  ~/dotfiles/.git/info/exclude
-|4,39,8,0,1654638286,"~/dotfiles/.git/info/exclude"
--'  1  0  ~/dotfiles/.git/info/exclude
-|4,39,1,0,1654638281,"~/dotfiles/.git/info/exclude"
--'  9  0  ~/dotfiles/vim/viminfo
-|4,39,9,0,1654638255,"~/dotfiles/vim/viminfo"
--'  9  0  ~/dotfiles/vim/viminfo
-|4,39,9,0,1654638255,"~/dotfiles/vim/viminfo"
--'  10  1  ~/dotfiles/vim/viminfo
-|4,39,10,1,1654638245,"~/dotfiles/vim/viminfo"
--'  10  1  ~/dotfiles/vim/viminfo
-|4,39,10,1,1654638245,"~/dotfiles/vim/viminfo"
--'  8  0  ~/dotfiles/vim/viminfo
-|4,39,8,0,1654638236,"~/dotfiles/vim/viminfo"
--'  7  0  ~/dotfiles/vim/viminfo
-|4,39,7,0,1654638236,"~/dotfiles/vim/viminfo"
--'  6  0  ~/dotfiles/vim/viminfo
-|4,39,6,0,1654638236,"~/dotfiles/vim/viminfo"
--'  8  0  ~/dotfiles/vim/viminfo
-|4,39,8,0,1654638236,"~/dotfiles/vim/viminfo"
--'  7  0  ~/dotfiles/vim/viminfo
-|4,39,7,0,1654638236,"~/dotfiles/vim/viminfo"
--'  6  0  ~/dotfiles/vim/viminfo
-|4,39,6,0,1654638236,"~/dotfiles/vim/viminfo"
--'  5  0  ~/dotfiles/vim/viminfo
-|4,39,5,0,1654638235,"~/dotfiles/vim/viminfo"
--'  3  0  ~/dotfiles/vim/viminfo
-|4,39,3,0,1654638235,"~/dotfiles/vim/viminfo"
--'  5  0  ~/dotfiles/vim/viminfo
-|4,39,5,0,1654638235,"~/dotfiles/vim/viminfo"
--'  3  0  ~/dotfiles/vim/viminfo
-|4,39,3,0,1654638235,"~/dotfiles/vim/viminfo"
--'  1  0  ~/dotfiles/vim/viminfo
-|4,39,1,0,1654638221,"~/dotfiles/vim/viminfo"
--'  1  0  ~/dotfiles/vim/viminfo
-|4,39,1,0,1654638221,"~/dotfiles/vim/viminfo"
--'  51  1  ~/dotfiles/aliases
-|4,39,51,1,1650962347,"~/dotfiles/aliases"
--'  51  1  ~/dotfiles/aliases
-|4,39,51,1,1650962347,"~/dotfiles/aliases"
--'  1  0  ~/dotfiles/aliases
-|4,39,1,0,1650961848,"~/dotfiles/aliases"
--'  1  0  ~/dotfiles/aliases
-|4,39,1,0,1650961848,"~/dotfiles/aliases"
+-'  64  0  ~/dotfiles/gitconfig
+|4,39,64,0,1654638555,"~/dotfiles/gitconfig"
+-'  1  0  ~/dotfiles/gitconfig
+|4,39,1,0,1654638550,"~/dotfiles/gitconfig"
 
 # History of marks within files (newest to oldest):
 
-> ~/dotfiles/.git/info/exclude
-	*	1654638286	0
-	"	8	0
-	^	8	0
-	.	7	11
-	+	7	11
-
-> ~/dotfiles/vim/viminfo
-	*	1654638255	0
-	"	9	0
-	.	10	0
-	+	10	0
+> ~/dotfiles/gitconfig
+	*	1654638553	0
+	"	64	0

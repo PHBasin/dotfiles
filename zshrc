@@ -3,18 +3,21 @@ ZSH=${HOME}/.oh-my-zsh
 # https://github.com/robbyrussell/oh-my-zsh/wiki/themes
 ZSH_THEME="robbyrussell"
 
-# Useful oh-my-zsh plugins for Le Wagon bootcamps
+# Useful oh-my-zsh plugins
 plugins=(git gitfast last-working-dir common-aliases zsh-syntax-highlighting history-substring-search colored-man-pages pyenv ssh-agent docker docker-compose)
-
-# Define a custom file for history and zcompdump
-export HISTFILE="${ZSH}/cache/.zsh_history"
-export ZSH_COMPDUMP="${ZSH}/cache/zcompdump-${HOST}-${ZSH_VERSION}"
 
 # Actually load Oh-My-Zsh
 source "${ZSH}/oh-my-zsh.sh"
 unalias rm
 
-# Load pyenv (to manage your Python versions)
+# Define a custom file for history and zcompdump
+export HISTFILE="${ZSH}/cache/.zsh_history"
+export ZSH_COMPDUMP="${ZSH}/cache/zcompdump-${HOST}-${ZSH_VERSION}"
+
+# Kubernetes auto-completion
+source <(kubectl completion zsh)
+
+# Load Pyenv (to manage your Python versions)
 type -a pyenv > /dev/null && eval "$(pyenv init -)" && eval "$(pyenv virtualenv-init -)" && RPROMPT+='[🐍 $(pyenv_prompt_info)]'
 
 # Load NVM (to manage your node versions)

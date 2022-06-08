@@ -3,12 +3,12 @@ ZSH=${HOME}/.oh-my-zsh
 # https://github.com/robbyrussell/oh-my-zsh/wiki/themes
 ZSH_THEME="robbyrussell"
 
-# Useful oh-my-zsh plugins
-plugins=(git gitfast last-working-dir common-aliases zsh-syntax-highlighting history-substring-search colored-man-pages pyenv ssh-agent docker docker-compose)
-
-# Actually load Oh-My-Zsh
+# Load Oh-My-Zsh
 source "${ZSH}/oh-my-zsh.sh"
 unalias rm
+
+# Useful oh-my-zsh plugins
+plugins=(git gitfast last-working-dir common-aliases zsh-syntax-highlighting history-substring-search colored-man-pages pyenv ssh-agent docker docker-compose)
 
 # Define a custom file for history and zcompdump
 export HISTFILE="${ZSH}/cache/.zsh_history"

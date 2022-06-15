@@ -5,7 +5,6 @@ ZSH_THEME="robbyrussell"
 
 # Load Oh-My-Zsh
 source "${ZSH}/oh-my-zsh.sh"
-unalias rm
 
 # Useful oh-my-zsh plugins
 plugins=(git gitfast last-working-dir common-aliases zsh-syntax-highlighting history-substring-search colored-man-pages pyenv ssh-agent docker docker-compose)
@@ -18,7 +17,9 @@ export ZSH_COMPDUMP="${ZSH}/cache/zcompdump-${HOST}-${ZSH_VERSION}"
 source <(kubectl completion zsh)
 
 # Load Pyenv (to manage your Python versions)
-type -a pyenv > /dev/null && eval "$(pyenv init -)" && eval "$(pyenv virtualenv-init -)" && RPROMPT+='[🐍 $(pyenv_prompt_info)]'
+export PYENV_ROOT="${HOME}/.pyenv"
+export PATH="${PYENV_ROOT}/bin:${PATH}"
+type -a pyenv > /dev/null && eval "$(pyenv init -)" && eval "$(pyenv virtualenv-init -)" && RPROMPT+='[🐍 $(pyenv version-name)]'
 
 # Load NVM (to manage your node versions)
 export NVM_DIR="$HOME/.nvm"

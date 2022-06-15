@@ -34,7 +34,6 @@ function dip {
 
 alias de='docker exec -it'
 alias dl='docker logs -f'
-alias de='docker exec -it'
 alias dstpa='dstp $(dcls -q)'
 alias drma='drm $(dcls -aq)'
 # alias dr='docker container run'

@@ -12,8 +12,8 @@
 [core]
 	pager = less -FRSX
 	editor = vim
-	autocrlf = input
-	safecrlf = true
+	autocrlf = false
+	safecrlf = false
 
 [alias]
 	br = branch

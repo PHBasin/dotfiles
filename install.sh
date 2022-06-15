@@ -41,12 +41,12 @@ fi
 cd "$CURRENT_DIR"
 
 # Symlink VS Code settings
-CODE_PATH=~/.vscode-server/data/Machine
-if [ -e $CODE_PATH ]; then
-  target="$CODE_PATH/settings.json"
-  backup $target
-  symlink $PWD/settings.json $target
-fi
+#CODE_PATH=~/.vscode-server/data/Machine
+#if [ -e $CODE_PATH ]; then
+#  target="$CODE_PATH/settings.json"
+#  backup $target
+#  symlink $PWD/settings.json $target
+#fi
 
 zsh ~/.zshrc
 

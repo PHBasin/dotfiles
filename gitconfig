@@ -61,5 +61,5 @@
 	name = PHBasin
 
 [credential]
-	helper = store
+	helper = cache
 

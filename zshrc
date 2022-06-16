@@ -3,23 +3,23 @@ ZSH=${HOME}/.oh-my-zsh
 # https://github.com/robbyrussell/oh-my-zsh/wiki/themes
 ZSH_THEME="robbyrussell"
 
-# Load Oh-My-Zsh
-source "${ZSH}/oh-my-zsh.sh"
-
 # Useful oh-my-zsh plugins
 plugins=(git gitfast last-working-dir common-aliases zsh-syntax-highlighting history-substring-search colored-man-pages pyenv ssh-agent docker docker-compose)
+
+# Load Oh-My-Zsh
+source ${ZSH}/oh-my-zsh.sh
 
 # Define a custom file for history and zcompdump
 export HISTFILE="${ZSH}/cache/.zsh_history"
 export ZSH_COMPDUMP="${ZSH}/cache/zcompdump-${HOST}-${ZSH_VERSION}"
 
-# Kubernetes auto-completion
+# Auto-completion
 source <(kubectl completion zsh)
+complete -C '/usr/local/aws/bin/aws_completer' aws
+complete -o nospace -C /home/phbasin/.tfenv/versions/1.2.3/terraform terraform
 
 # Load Pyenv (to manage your Python versions)
-export PYENV_ROOT="${HOME}/.pyenv"
-export PATH="${PYENV_ROOT}/bin:${PATH}"
-type -a pyenv > /dev/null && eval "$(pyenv init -)" && eval "$(pyenv virtualenv-init -)" && RPROMPT+='[🐍 $(pyenv version-name)]'
+type -a pyenv > /dev/null && eval "$(pyenv init -)" && eval "$(pyenv virtualenv-init -)" && RPROMPT+='[🐍 $(pyenv_prompt_info)]'
 
 # Load NVM (to manage your node versions)
 export NVM_DIR="$HOME/.nvm"
@@ -53,3 +53,4 @@ type -a nvm > /dev/null && load-nvmrc
 # Encoding stuff for the terminal
 export LANG=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
+

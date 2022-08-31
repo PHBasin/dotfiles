@@ -19,7 +19,7 @@
 	br = branch
 	ci = commit
 	cm = commit -m
-	ca = commit -am
+	ca = !git add -A && git commit -m
 	cn = commit --amend --no-edit
 	co = checkout
 	d = !git --no-pager diff

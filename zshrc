@@ -15,14 +15,18 @@ export ZSH_COMPDUMP="${ZSH}/cache/zcompdump-${HOST}-${ZSH_VERSION}"
 
 # Auto-completion
 source <(kubectl completion zsh)
-complete -C '/usr/local/aws/bin/aws_completer' aws
+compdef kubecolor=kubectl
+complete -C '/usr/local/bin/aws_completer' aws
 complete -o nospace -C /home/phbasin/.tfenv/versions/1.2.3/terraform terraform
+
+# Load Kubernetes configuration
+source "${HOME}/dotfiles/load-k8s.sh"
 
 # Load Pyenv (to manage your Python versions)
 type -a pyenv > /dev/null && eval "$(pyenv init -)" && eval "$(pyenv virtualenv-init -)" && RPROMPT+='[🐍 $(pyenv_prompt_info)]'
 
 # Load NVM (to manage your node versions)
-export NVM_DIR="$HOME/.nvm"
+export NVM_DIR="${HOME}/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
 

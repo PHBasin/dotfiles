@@ -69,21 +69,21 @@ if has("autocmd")
   \ endif
 endif
 
-" ChromeOS yank support
-let g:os = substitute(system('uname -n'), '\n', '', '')
-if g:os == "penguin"
-  augroup osc52
-    autocmd!
-    autocmd TextYankPost * if v:event.operator ==# 'y' | call SendViaOSC52(getreg(v:event.regname)) | endif
-  augroup END
-endif
-
 " WSL yank support
 let s:clip = "/mnt/c/Windows/System32/clip.exe"
 if executable(s:clip)
   augroup WSLYank
     autocmd!
     autocmd TextYankPost * if v:event.operator ==# 'y' | call system(s:clip, @0) | endif
+  augroup END
+endif
+
+" ChromeOS yank support
+let g:os = substitute(system('uname -n'), '\n', '', '')
+if g:os == "penguin"
+  augroup osc52
+    autocmd!
+    autocmd TextYankPost * if v:event.operator ==# 'y' | call SendViaOSC52(getreg(v:event.regname)) | endif
   augroup END
 endif
 

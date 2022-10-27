@@ -18,6 +18,9 @@ alias py='python'
 # Terraform
 alias tf='terraform'
 
+# JFrog
+alias jfrog='jf'
+
 # Docker
 # https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/docker
 alias dnames="docker ps --format '{{.Names}}'"
@@ -51,7 +54,7 @@ alias drma='drm $(dcls -aq)'
 # alias dcdn='docker compose down'
 
 # Kubernetes
-alias k='kubectl'
+alias k='kubecolor'
 alias ka='kubectl apply -f'
 alias kgp='kubectl get pods -o wide --show-labels'
 alias kgn='kubectl get nodes -o wide --show-labels'

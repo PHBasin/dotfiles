@@ -54,7 +54,8 @@ alias drma='drm $(dcls -aq)'
 # alias dcdn='docker compose down'
 
 # Kubernetes
-alias k='kubecolor'
+alias k='kubectl'
+alias kubectl='kubecolor'
 alias ka='kubectl apply -f'
 alias kgp='kubectl get pods -o wide --show-labels'
 alias kgn='kubectl get nodes -o wide --show-labels'

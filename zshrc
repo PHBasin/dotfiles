@@ -14,8 +14,7 @@ export HISTFILE="${ZSH}/cache/.zsh_history"
 export ZSH_COMPDUMP="${ZSH}/cache/zcompdump-${HOST}-${ZSH_VERSION}"
 
 # Auto-completion
-source <(kubectl completion zsh)
-compdef kubecolor=kubectl
+[ -s "${HOME}/.kube/config" ] && source <(kubectl completion zsh) && compdef kubecolor=kubectl
 complete -C '/usr/local/bin/aws_completer' aws
 complete -o nospace -C /home/phbasin/.tfenv/versions/1.2.3/terraform terraform
 
@@ -27,8 +26,8 @@ type -a pyenv > /dev/null && eval "$(pyenv init -)" && eval "$(pyenv virtualenv-
 
 # Load NVM (to manage your node versions)
 export NVM_DIR="${HOME}/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
+[ -s "${NVM_DIR}/nvm.sh" ] && \. "${NVM_DIR}/nvm.sh"
+[ -s "${NVM_DIR}/bash_completion" ] && \. "${NVM_DIR}/bash_completion"
 
 # Call `nvm use` automatically in a directory with a `.nvmrc` file
 autoload -U add-zsh-hook

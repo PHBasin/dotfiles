@@ -37,9 +37,12 @@ set pastetoggle=<F3>
 set expandtab     "spaces instead of tab
 set shiftwidth=2  "number of spaces used
 set tabstop=2     "display width of tab
+set softtabstop=2 "let backspace delete indent
 
 " I want to find what I'm looking for
 set hlsearch
+" Ignorecase when searching
+set ic
 
 " Highlight the matching bracket
 set showmatch

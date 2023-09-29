@@ -4,13 +4,15 @@ ZSH=${HOME}/.oh-my-zsh
 ZSH_THEME="robbyrussell"
 
 # Useful oh-my-zsh plugins
-plugins=(git gitfast last-working-dir common-aliases zsh-syntax-highlighting history-substring-search colored-man-pages pyenv ssh-agent docker docker-compose)
+plugins=(git gitfast last-working-dir common-aliases zsh-syntax-highlighting history-substring-search colored-man-pages pyenv ssh-agent docker docker-compose zsh-kubectl-prompt)
 
 # Load Oh-My-Zsh
 source ${ZSH}/oh-my-zsh.sh
 
 # Define a custom file for history and zcompdump
 export HISTFILE="${ZSH}/cache/.zsh_history"
+export HISTSIZE=10000000
+export SAVEHIST=${HISTSIZE}
 export ZSH_COMPDUMP="${ZSH}/cache/zcompdump-${HOST}-${ZSH_VERSION}"
 
 # Auto-completion
@@ -20,6 +22,7 @@ complete -o nospace -C /home/phbasin/.tfenv/versions/1.2.3/terraform terraform
 
 # Load Kubernetes configuration
 source "${HOME}/dotfiles/load-k8s.sh"
+RPROMPT='[🐋 $ZSH_KUBECTL_NAMESPACE]'
 
 # Load Python virtual env
 export VIRTUAL_ENV_DISABLE_PROMPT=1
@@ -55,7 +58,9 @@ source "${HOME}/.venv/bin/activate"
 # Store your own aliases in the ~/.aliases file and load the here.
 [[ -f "${HOME}/.aliases" ]] && source "${HOME}/.aliases"
 
+# Set environment variables
+export EDITOR=vim
+
 # Encoding stuff for the terminal
 export LANG=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
-

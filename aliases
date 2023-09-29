@@ -35,7 +35,7 @@ function dip {
   unset NAME IP OUT
 }
 
-alias de='docker exec -it'
+alias dr='docker run -it'
 alias dl='docker logs -f'
 alias dstpa='dstp $(dcls -q)'
 alias drma='drm $(dcls -aq)'

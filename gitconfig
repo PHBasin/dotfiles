@@ -51,15 +51,18 @@
 	autocorrect = 1
 
 [push]
-	default = simple
+	default = current
+	autoSetupRemote = true
 
 [branch "master"]
 	mergeoptions = --no-edit
 
 [user]
-	email = pierre-henri.basin@orange.fr
+	email = pierre-henri.basin@soprasteria.com
 	name = PHBasin
 
 [credential]
 	helper = cache
 
+[init]
+	defaultBranch = main

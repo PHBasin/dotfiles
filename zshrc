@@ -15,6 +15,9 @@ export HISTSIZE=10000000
 export SAVEHIST=${HISTSIZE}
 export ZSH_COMPDUMP="${ZSH}/cache/zcompdump-${HOST}-${ZSH_VERSION}"
 
+# Default browser
+export BROWSER='/mnt/c/Program Files/Google/Chrome/Application/chrome.exe'
+
 # Auto-completion
 [ -s "${HOME}/.kube/config" ] && source <(kubectl completion zsh) && compdef kubecolor=kubectl
 complete -C '/usr/local/bin/aws_completer' aws

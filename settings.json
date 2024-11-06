@@ -1,71 +1,85 @@
 {
-  "[python]": {
-    "editor.tabSize": 4
-  },
-  "editor.detectIndentation": false,
-  "editor.fontSize": 14,
-  "editor.fontFamily": "'Cascadia Code', Consolas, 'Courier New', monospace",
-  "editor.formatOnPaste": true,
-  "editor.insertSpaces": true,
-  "editor.minimap.enabled": false,
-  "editor.multiCursorModifier": "ctrlCmd",
-  "editor.renderControlCharacters": true,
-  "editor.rulers": [
-    80
-  ],
-  "editor.scrollBeyondLastLine": true,
-  "editor.showFoldingControls": "always",
-  "editor.snippetSuggestions": "top",
-  "editor.tabSize": 2,
-  "editor.trimAutoWhitespace": true,
-  "editor.useTabStops": true,
-  "emmet.includeLanguages": {
-    "erb": "html"
-  },
-  "emmet.showSuggestionsAsSnippets": true,
-  "emmet.triggerExpansionOnTab": true,
-  "explorer.confirmDelete": false,
-  "files.exclude": {
-    "**/.DS_Store": true,
-    "**/.egg-info": true,
-    "**/.git": true,
-    ".asset-cache": true,
-    ".bundle": true,
-    ".ipynb_checkpoints": true,
-    ".pytest_cache": true,
-    ".sass-cache": true,
-    ".svn": true,
-    "__pycache__": true,
-    "_site": true,
-    "build": true,
-    "coverage": true,
-    "dist": true,
-    "log": true,
-    "node_modules": true,
-    "public/packs": true,
-    "tmp": true
-  },
-  "files.hotExit": "off",
-  "files.insertFinalNewline": true,
-  "files.trimFinalNewlines": true,
-  "files.trimTrailingWhitespace": true,
-  "files.watcherExclude": {
-    "**/audits/**": true,
-    "**/coverage/**": true,
-    "**/log/**": true,
-    "**/node_modules/**": true,
-    "**/tmp/**": true,
-    "**/vendor/**": true
-  },
-  "git.enabled": false,
-  "python.formatting.provider": "yapf",
-  "python.pythonPath": "~/.pyenv/shims/python",
-  "telemetry.telemetryLevel": "off",
-  "window.restoreWindows": "none",
-  "workbench.iconTheme": "material-icon-theme",
-  "workbench.settings.editor": "json",
-  "workbench.startupEditor": "newUntitledFile",
-  "workbench.colorCustomizations": {
-    "editorRuler.foreground": "#00000000"
-  }
+    "$help": "https://aka.ms/terminal-documentation",
+    "$schema": "https://aka.ms/terminal-profiles-schema",
+    "actions":
+    [
+        {
+            "command":
+            {
+                "action": "copy",
+                "singleLine": false
+            },
+            "id": "User.copy.644BA8F2",
+            "keys": "ctrl+c"
+        },
+        {
+            "command": "paste",
+            "id": "User.paste",
+            "keys": "ctrl+v"
+        },
+        {
+            "command": "find",
+            "id": "User.find",
+            "keys": "ctrl+shift+f"
+        },
+        {
+            "command":
+            {
+                "action": "splitPane",
+                "split": "auto",
+                "splitMode": "duplicate"
+            },
+            "id": "User.splitPane.A6751878",
+            "keys": "alt+shift+d"
+        }
+    ],
+    "copyFormatting": "none",
+    "copyOnSelect": false,
+    "defaultProfile": "{61c54bbd-c2c6-5271-96e7-009a87ff44bf}",
+    "newTabMenu":
+    [
+        {
+            "type": "remainingProfiles"
+        }
+    ],
+    "profiles":
+    {
+        "defaults": {},
+        "list":
+        [
+            {
+                "commandline": "%SystemRoot%\\System32\\WindowsPowerShell\\v1.0\\powershell.exe",
+                "guid": "{61c54bbd-c2c6-5271-96e7-009a87ff44bf}",
+                "hidden": false,
+                "name": "Windows PowerShell"
+            },
+            {
+                "commandline": "%SystemRoot%\\System32\\cmd.exe",
+                "guid": "{0caa0dad-35be-5f56-a8ff-afceeeaa6101}",
+                "hidden": false,
+                "name": "Command Prompt"
+            },
+            {
+                "guid": "{2c4de342-38b7-51cf-b940-2309a097f518}",
+                "hidden": true,
+                "name": "Ubuntu",
+                "source": "Windows.Terminal.Wsl"
+            },
+            {
+                "guid": "{b453ae62-4e3d-5e58-b989-0a998ec441b8}",
+                "hidden": false,
+                "name": "Azure Cloud Shell",
+                "source": "Windows.Terminal.Azure"
+            },
+            {
+                "guid": "{51855cb2-8cce-5362-8f54-464b92b32386}",
+                "hidden": false,
+                "name": "Ubuntu",
+                "source": "CanonicalGroupLimited.Ubuntu_79rhkp1fndgsc"
+            }
+        ]
+    },
+    "schemes": [],
+    "themes": []
 }
+

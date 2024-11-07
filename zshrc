@@ -21,8 +21,10 @@ complete -o nospace -C /home/phbasin/.tfenv/versions/1.2.3/terraform terraform
 # Load Kubernetes configuration
 source "${HOME}/dotfiles/load-k8s.sh"
 
-# Load Pyenv (to manage your Python versions)
-type -a pyenv > /dev/null && eval "$(pyenv init -)" && eval "$(pyenv virtualenv-init -)" && RPROMPT+='[🐍 $(pyenv_prompt_info)]'
+# Load Python virtual env
+source "${HOME}/.venv/bin/activate"
+export VIRTUAL_ENV_DISABLE_PROMPT=1
+#eval "$(pyenv virtualenv-init -)" && RPROMPT+='[🐍 $(pyenv_prompt_info)]'
 
 # Load NVM (to manage your node versions)
 export NVM_DIR="${HOME}/.nvm"

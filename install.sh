@@ -70,9 +70,7 @@ cd "$CURRENT_DIR" || exit
 #fi
 
 # Python
-sudo apt update && sudo apt install -y python3-pip \
-                                       python3-venv
-
+git clone https://github.com/pyenv/pyenv.git ~/.pyenv
 pyenv install 3.10.6
 pyenv global 3.10.6
 

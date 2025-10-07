@@ -4,7 +4,7 @@ ZSH=${HOME}/.oh-my-zsh
 ZSH_THEME="robbyrussell"
 
 # Useful oh-my-zsh plugins
-plugins=(git gitfast last-working-dir common-aliases zsh-syntax-highlighting history-substring-search colored-man-pages pyenv ssh-agent docker docker-compose zsh-kubectl-prompt)
+plugins=(git gitfast last-working-dir common-aliases zsh-syntax-highlighting history-substring-search colored-man-pages pyenv ssh-agent docker docker-compose)
 
 # Load Oh-My-Zsh
 source ${ZSH}/oh-my-zsh.sh
@@ -19,18 +19,21 @@ export ZSH_COMPDUMP="${ZSH}/cache/zcompdump-${HOST}-${ZSH_VERSION}"
 export BROWSER='/mnt/c/Program Files/Google/Chrome/Application/chrome.exe'
 
 # Auto-completion
-[ -s "${HOME}/.kube/config" ] && source <(kubectl completion zsh) && compdef kubecolor=kubectl
-complete -C '/usr/local/bin/aws_completer' aws
-complete -o nospace -C /home/phbasin/.tfenv/versions/1.2.3/terraform terraform
+#[ -s "${HOME}/.kube/config" ] && source <(kubectl completion zsh) && compdef kubecolor=kubectl
+#complete -C '/usr/local/bin/aws_completer' aws
+#complete -o nospace -C /home/phbasin/.tfenv/versions/1.2.3/terraform terraform
 
 # Load Kubernetes configuration
-source "${HOME}/dotfiles/load-k8s.sh"
-RPROMPT='[🐋 $ZSH_KUBECTL_NAMESPACE]'
+#source "${HOME}/dotfiles/load-k8s.sh"
+#RPROMPT='[🐋 $ZSH_KUBECTL_NAMESPACE]'
 
 # Load Python virtual env
-export VIRTUAL_ENV_DISABLE_PROMPT=1
-source "${HOME}/.venv/bin/activate"
-#eval "$(pyenv virtualenv-init -)" && RPROMPT+='[🐍 $(pyenv_prompt_info)]'
+#export VIRTUAL_ENV_DISABLE_PROMPT=1
+#source "${HOME}/.venv/bin/activate"
+export PYENV_ROOT="$HOME/.pyenv"
+export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init --path)"
+RPROMPT+='[🐍 $(pyenv_prompt_info)]'
 
 # Load NVM (to manage your node versions)
 #export NVM_DIR="${HOME}/.nvm"

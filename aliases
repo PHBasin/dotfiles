@@ -1,3 +1,6 @@
+# List informations about the files
+alias ll='ls -alF'
+
 # Get External IP / local IPs
 alias ip='ip -c'
 alias ipconfig='curl ipinfo.io/ip'
@@ -13,6 +16,7 @@ fi
 
 # Python
 alias serve='python -m SimpleHTTPServer'
+alias python='python3'
 alias py='python'
 
 # Terraform

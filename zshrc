@@ -28,8 +28,8 @@ export BROWSER='/mnt/c/Program Files/Google/Chrome/Application/chrome.exe'
 #RPROMPT='[🐋 $ZSH_KUBECTL_NAMESPACE]'
 
 # Load Python virtual env
-#export VIRTUAL_ENV_DISABLE_PROMPT=1
 #source "${HOME}/.venv/bin/activate"
+export VIRTUAL_ENV_DISABLE_PROMPT=1
 export PYENV_ROOT="$HOME/.pyenv"
 export PATH="$PYENV_ROOT/bin:$PATH"
 eval "$(pyenv init --path)"

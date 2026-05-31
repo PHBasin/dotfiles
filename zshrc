@@ -4,69 +4,59 @@ ZSH=${HOME}/.oh-my-zsh
 ZSH_THEME="robbyrussell"
 
 # Useful oh-my-zsh plugins
-plugins=(git gitfast last-working-dir common-aliases zsh-syntax-highlighting history-substring-search colored-man-pages pyenv ssh-agent docker docker-compose)
+plugins=(git gitfast last-working-dir common-aliases zsh-autosuggestions zsh-syntax-highlighting history-substring-search colored-man-pages pyenv ssh-agent docker docker-compose)
 
-# Load Oh-My-Zsh
-source ${ZSH}/oh-my-zsh.sh
-
-# Define a custom file for history and zcompdump
+# Zsh history
 export HISTFILE="${ZSH}/cache/.zsh_history"
 export HISTSIZE=10000000
 export SAVEHIST=${HISTSIZE}
 export ZSH_COMPDUMP="${ZSH}/cache/zcompdump-${HOST}-${ZSH_VERSION}"
 
-# Default browser
-export BROWSER='/mnt/c/Program Files/Google/Chrome/Application/chrome.exe'
+# Load Oh-My-Zsh
+source ${ZSH}/oh-my-zsh.sh
 
-# Auto-completion
-#[ -s "${HOME}/.kube/config" ] && source <(kubectl completion zsh) && compdef kubecolor=kubectl
-#complete -C '/usr/local/bin/aws_completer' aws
-#complete -o nospace -C /home/phbasin/.tfenv/versions/1.2.3/terraform terraform
+# Zsh History Options
+setopt APPEND_HISTORY
+setopt INC_APPEND_HISTORY
+setopt SHARE_HISTORY
+setopt HIST_IGNORE_ALL_DUPS
+setopt HIST_IGNORE_SPACE
+setopt HIST_REDUCE_BLANKS
 
-# Load Kubernetes configuration
-#source "${HOME}/dotfiles/load-k8s.sh"
-#RPROMPT='[🐋 $ZSH_KUBECTL_NAMESPACE]'
+# Python
+if command -v pyenv 1>/dev/null 2>&1; then
+  RPROMPT+='[🐍 $(pyenv_prompt_info)]'
+fi
 
-# Load Python virtual env
-#source "${HOME}/.venv/bin/activate"
-export VIRTUAL_ENV_DISABLE_PROMPT=1
-export PYENV_ROOT="$HOME/.pyenv"
-export PATH="$PYENV_ROOT/bin:$PATH"
-eval "$(pyenv init --path)"
-RPROMPT+='[🐍 $(pyenv_prompt_info)]'
+# NVM
+export NVM_DIR="${HOME}/.nvm"
+if [ -s "${NVM_DIR}/nvm.sh" ]; then
+  \. "${NVM_DIR}/nvm.sh"
+  [ -s "${NVM_DIR}/bash_completion" ] && \. "${NVM_DIR}/bash_completion"
+  # Auto-load NVM version on directory change
+  autoload -U add-zsh-hook
+  load-nvmrc() {
+    local nvmrc_path="$(nvm_find_nvmrc 2>/dev/null)"
+    if [ -n "$nvmrc_path" ]; then
+      local nvmrc_node_version=$(nvm version "$(cat "${nvmrc_path}")" 2>/dev/null)
+      if [ "$nvmrc_node_version" = "N/A" ]; then
+        nvm install
+      elif [ "$nvmrc_node_version" != "$(nvm version 2>/dev/null)" ]; then
+        nvm use --silent
+      fi
+    fi
+  }
+  add-zsh-hook chpwd load-nvmrc
+  load-nvmrc
+fi
 
-# Load NVM (to manage your node versions)
-#export NVM_DIR="${HOME}/.nvm"
-#[ -s "${NVM_DIR}/nvm.sh" ] && \. "${NVM_DIR}/nvm.sh"
-#[ -s "${NVM_DIR}/bash_completion" ] && \. "${NVM_DIR}/bash_completion"
+# Kubernetes
+# if [ -s "${HOME}/.kube/config" ]; then
+#   source <(kubectl completion zsh)
+#   compdef kubecolor=kubectl
+#   source "${HOME}/dotfiles/load-k8s.sh"
+#   RPROMPT+=' [🐋 $ZSH_KUBECTL_NAMESPACE]'
+# fi
 
-# Call `nvm use` automatically in a directory with a `.nvmrc` file
-#autoload -U add-zsh-hook
-#load-nvmrc() {
-#  if nvm -v &> /dev/null; then
-#    local node_version="$(nvm version)"
-#    local nvmrc_path="$(nvm_find_nvmrc)"
-#    if [ -n "$nvmrc_path" ]; then
-#      local nvmrc_node_version=$(nvm version "$(cat "${nvmrc_path}")")
-#      if [ "$nvmrc_node_version" = "N/A" ]; then
-#        nvm install
-#      elif [ "$nvmrc_node_version" != "$node_version" ]; then
-#        nvm use --silent
-#      fi
-#    elif [ "$node_version" != "$(nvm version default)" ]; then
-#      nvm use default --silent
-#    fi
-#  fi
-#}
-#type -a nvm > /dev/null && add-zsh-hook chpwd load-nvmrc
-#type -a nvm > /dev/null && load-nvmrc
-
-# Store your own aliases in the ~/.aliases file and load the here.
+# Aliases
 [[ -f "${HOME}/.aliases" ]] && source "${HOME}/.aliases"
-
-# Set environment variables
-export EDITOR=vim
-
-# Encoding stuff for the terminal
-export LANG=en_US.UTF-8
-export LC_ALL=en_US.UTF-8

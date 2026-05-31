@@ -1,87 +1,167 @@
 {
     "$help": "https://aka.ms/terminal-documentation",
     "$schema": "https://aka.ms/terminal-profiles-schema",
-    "actions": [],
+    "actions":
+    [
+        {
+            "command": "find",
+            "id": "User.find"
+        },
+        {
+            "command":
+            {
+                "action": "splitPane",
+                "split": "auto",
+                "splitMode": "duplicate"
+            },
+            "id": "User.splitPane.A6751878"
+        },
+        {
+            "command":
+            {
+                "action": "splitPane",
+                "split": "right"
+            },
+            "id": "User.splitPane.864CD510"
+        },
+        {
+            "command":
+            {
+                "action": "copy",
+                "singleLine": false
+            },
+            "id": "User.copy.644BA8F2"
+        },
+        {
+            "command":
+            {
+                "action": "splitPane",
+                "split": "down"
+            },
+            "id": "User.splitPane.D5151347"
+        },
+        {
+            "command": "paste",
+            "id": "User.paste"
+        },
+        {
+            "command": "closePane",
+            "id": "User.closePane"
+        }
+    ],
     "copyFormatting": "none",
     "copyOnSelect": false,
-    "defaultProfile": "{61c54bbd-c2c6-5271-96e7-009a87ff44bf}",
+    "defaultProfile": "{58ad8b0c-3ef8-5f4d-bc6f-13e4c00f2530}",
     "keybindings":
     [
         {
-            "id": "Terminal.CopyToClipboard",
-            "keys": "ctrl+c"
+            "id": null,
+            "keys": "ctrl+shift+w"
         },
         {
-            "id": "Terminal.FindText",
-            "keys": "ctrl+f"
-        },
-        {
-            "id": "Terminal.PasteFromClipboard",
+            "id": "User.paste",
             "keys": "ctrl+v"
         },
         {
-            "id": "Terminal.DuplicatePaneRight",
+            "id": "User.find",
+            "keys": "ctrl+f"
+        },
+        {
+            "id": "User.splitPane.864CD510",
             "keys": "ctrl+right"
         },
         {
-            "id": "Terminal.ClosePane",
-            "keys": "ctrl+left"
+            "id": null,
+            "keys": "alt+shift+plus"
         },
         {
-            "id": "Terminal.DuplicatePaneDown",
+            "id": null,
+            "keys": "alt+shift+6"
+        },
+        {
+            "id": "User.copy.644BA8F2",
+            "keys": "ctrl+c"
+        },
+        {
+            "id": "User.splitPane.D5151347",
             "keys": "ctrl+down"
         },
         {
-            "id": "Terminal.ResetFontSize",
-            "keys": "ctrl+0"
+            "id": "User.closePane",
+            "keys": "ctrl+left"
         },
         {
-            "id": "Terminal.IncreaseFontSize",
-            "keys": "ctrl+plus"
+            "id": "User.splitPane.A6751878",
+            "keys": "alt+shift+d"
         }
     ],
-    "newTabMenu": [
+    "newTabMenu":
+    [
         {
             "type": "remainingProfiles"
         }
     ],
-    "profiles": {
-        "defaults": {
-            "bellStyle": "none"
-        },
-        "list": [
+    "profiles":
+    {
+        "defaults":
+        {
+            "bellStyle": "none",
+            "font":
             {
-                "commandline": "%SystemRoot%\\System32\\WindowsPowerShell\\v1.0\\powershell.exe",
+                "face": "Cascadia Code",
+                "size": 10
+            }
+        },
+        "list":
+        [
+            {
+                "background": "#002970",
                 "guid": "{61c54bbd-c2c6-5271-96e7-009a87ff44bf}",
                 "hidden": false,
-                "name": "Windows PowerShell"
+                "name": "PowerShell",
+                "tabColor": "#002970"
             },
             {
-                "commandline": "%SystemRoot%\\System32\\cmd.exe",
+                "background": "#0C0C0C",
                 "guid": "{0caa0dad-35be-5f56-a8ff-afceeeaa6101}",
                 "hidden": false,
-                "name": "Command Prompt"
+                "name": "Command Prompt",
+                "tabColor": "#0C0C0C"
             },
             {
-                "guid": "{2c4de342-38b7-51cf-b940-2309a097f518}",
-                "hidden": true,
-                "name": "Ubuntu",
-                "source": "Windows.Terminal.Wsl"
-            },
-            {
+                "background": "#007DC4",
                 "guid": "{b453ae62-4e3d-5e58-b989-0a998ec441b8}",
                 "hidden": false,
                 "name": "Azure Cloud Shell",
-                "source": "Windows.Terminal.Azure"
+                "source": "Windows.Terminal.Azure",
+                "tabColor": "#007DC4"
             },
             {
-                "guid": "{51855cb2-8cce-5362-8f54-464b92b32386}",
+                "background": "#1E1E1E",
+                "guid": "{58ad8b0c-3ef8-5f4d-bc6f-13e4c00f2530}",
                 "hidden": false,
-                "name": "Ubuntu",
-                "source": "CanonicalGroupLimited.Ubuntu_79rhkp1fndgsc"
+                "icon": "ms-appdata:///roaming/debian.png",
+                "name": "Debian",
+                "source": "Windows.Terminal.Wsl",
+                "startingDirectory": "/home/phbasin",
+                "tabColor": "#1E1E1E"
+            },
+            {
+                "background": "#350425",
+                "commandline": "multipass shell",
+                "cursorShape": "filledBox",
+                "font":
+                {
+                    "face": "Ubuntu Mono"
+                },
+                "guid": "{aaaa9e6d-1e09-4be6-b76c-82b4ba1885fb}",
+                "historySize": 50000,
+                "icon": "C:/Program Files/Multipass/bin/multipass_wt.ico",
+                "name": "Multipass"
             }
         ]
     },
     "schemes": [],
-    "themes": []
+    "themes": [],
+    "warning.multiLinePaste": false
 }

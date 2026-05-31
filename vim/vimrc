@@ -1,6 +1,11 @@
+" Disable compatibility with old vi
+set nocompatible
+" Enable filetype detection and plugins
+filetype plugin indent on
+
 if has("multi_byte")
   set encoding=utf-8
-  setglobal fileencoding=utf-8
+  set fileencoding=utf-8
 else
   echoerr "Sorry, this version of (g)vim was not compiled with +multi_byte"
 endif
@@ -22,10 +27,15 @@ cnoremap w!! w !sudo tee > /dev/null %
 " Display line numbers on the left
 set number
 
+" Modern defaults
+set wildmenu      " Visual autocomplete for command menu
+set showcmd       " Show incomplete commands
+set lazyredraw    " Do not redraw screen while running macros
+
 " Enable use of the mouse for all modes
 set mouse=a
 
-" Allow backspapcing over autoindent, line breaks and start of insert action
+" Allow backspacing over autoindent, line breaks and start of insert action
 set backspace=indent,eol,start
 
 " Enable autoindent
@@ -41,8 +51,9 @@ set softtabstop=2 "let backspace delete indent
 
 " I want to find what I'm looking for
 set hlsearch
-" Ignorecase when searching
-set ic
+" Ignore case when searching, unless uppercase letters are used
+set ignorecase
+set smartcase
 
 " Highlight the matching bracket
 set showmatch
@@ -58,6 +69,15 @@ inoremap {; {<CR>};<ESC>O
 
 " Change .viminfo location
 set viminfo+=n~/.vim/viminfo
+
+" Strip trailing whitespace on save
+fun! <SID>StripWhitespace()
+    let l = line(".")
+    let c = col(".")
+    %s/\s\+$//e
+    call cursor(l, c)
+endfun
+command! Stripwhitespace call <SID>StripWhitespace()
 
 if has("autocmd")
   " StripTrailingWhitespaces

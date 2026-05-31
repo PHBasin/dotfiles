@@ -50,16 +50,19 @@ if [ ! -e "$ZSH_DIR" ]; then
 fi
 sudo chsh --shell /usr/bin/zsh $(whoami)
 
-# Zsh plugin
-CURRENT_DIR=$(pwd)
+# Zsh plugins
 ZSH_PLUGINS_DIR="$ZSH_DIR/custom/plugins"
-mkdir -p "$ZSH_PLUGINS_DIR" && cd "$ZSH_PLUGINS_DIR" || exit
-if [ ! -d "$ZSH_PLUGINS_DIR/zsh-syntax-highlighting" ]; then
-    echo "-----> Installing zsh plugin 'zsh-syntax-highlighting'..."
-    git clone https://github.com/zsh-users/zsh-autosuggestions
-    git clone https://github.com/zsh-users/zsh-syntax-highlighting
+mkdir -p "$ZSH_PLUGINS_DIR"
+
+if [ ! -d "$ZSH_PLUGINS_DIR/zsh-autosuggestions" ]; then
+    echo "-----> Installing zsh-autosuggestions..."
+    git clone https://github.com/zsh-users/zsh-autosuggestions "$ZSH_PLUGINS_DIR/zsh-autosuggestions"
 fi
-cd "$CURRENT_DIR" || exit
+
+if [ ! -d "$ZSH_PLUGINS_DIR/zsh-syntax-highlighting" ]; then
+    echo "-----> Installing zsh-syntax-highlighting..."
+    git clone https://github.com/zsh-users/zsh-syntax-highlighting "$ZSH_PLUGINS_DIR/zsh-syntax-highlighting"
+fi
 
 # Terminal settings
 #WT_PATH=~/.vscode-server/data/Machine
@@ -70,9 +73,25 @@ cd "$CURRENT_DIR" || exit
 #fi
 
 # Python
-git clone https://github.com/pyenv/pyenv.git ~/.pyenv
-pyenv install 3.10.6
-pyenv global 3.10.6
+if [ ! -d "$HOME/.pyenv" ]; then
+    echo "-----> Installing pyenv..."
+    sudo apt install -y build-essential libssl-dev zlib1g-dev \
+    libbz2-dev libreadline-dev libsqlite3-dev wget curl llvm \
+    libncursesw5-dev xz-utils tk-dev libxml2-dev libxmlsec1-dev libffi-dev liblzma-dev
+
+    git clone https://github.com/pyenv/pyenv.git ~/.pyenv
+fi
+
+export PYENV_ROOT="$HOME/.pyenv"
+export PATH="$PYENV_ROOT/bin:$PATH"
+if command -v pyenv &> /dev/null; then
+    eval "$(pyenv init --path)"
+    if ! pyenv versions | grep -q "3.10.6"; then
+        echo "-----> Installing Python 3.10.6 via pyenv (this may take a few minutes)..."
+        pyenv install 3.10.6
+    fi
+    pyenv global 3.10.6
+fi
 
 zsh ~/.zshrc
 

@@ -1,11 +1,13 @@
 # List informations about the files
 alias ll='ls -alF'
+alias grep='grep --color=auto'
 
 # Get External IP / local IPs
 alias ip='ip -c'
 alias ipconfig='curl ipinfo.io/ip'
 alias ips="ip a | perl -nle '/(\d+\.\d+\.\d+\.\d+)/ && print $1'"
 alias speedtest='curl -s https://raw.githubusercontent.com/sivel/speedtest-cli/master/speedtest.py | python -'
+alias wget='wget --hsts-file="$HOME/.cache/.wget-hsts"'
 
 # Open subsystem folder with GUI
 if [[ $(uname -a) =~ 'microsoft' ]]; then
@@ -15,7 +17,7 @@ elif [[ $(uname -a) =~ 'Linux' ]]; then
 fi
 
 # Python
-alias serve='python -m SimpleHTTPServer'
+alias serve='python3 -m http.server'
 alias python='python3'
 alias py='python'
 
@@ -30,13 +32,19 @@ alias jfrog='jf'
 alias dnames="docker ps --format '{{.Names}}'"
 
 function dip {
-  for NAME in $(dnames)
+  local OUT=""
+  local IP=""
+  local NAME=""
+  for NAME in $(docker ps --format '{{.Names}}')
   do
-    IP=$(docker inspect --format='{{range .NetworkSettings.Networks}}{{println .IPAddress}}{{end}}' ${NAME})
-    OUT+="${NAME}\t${IP}\n"
+    IP=$(docker inspect --format='{{range .NetworkSettings.Networks}}{{println .IPAddress}}{{end}}' "${NAME}" | xargs)
+    if [ -n "$IP" ]; then
+      OUT+="${NAME}\t${IP}\n"
+    else
+      OUT+="${NAME}\t(none)\n"
+    fi
   done
-  echo ${OUT} | column -t
-  unset NAME IP OUT
+  echo -e "${OUT}" | column -t
 }
 
 alias dr='docker run -it'

@@ -1,98 +1,122 @@
-#!/bin/bash
-set -e
+#!/usr/bin/env bash
 
-# Update
+# System update and
+CORE_PACKAGES=(
+    "ca-certificates" "curl" "wget" "vim" "jq" "git" "unzip" "tree" "zsh"
+)
+
+echo "Updating system packages..."
 sudo apt update && sudo apt upgrade -y
-sudo apt install -y ca-certificates \
-                    curl \
-                    wget \
-                    vim \
-                    jq \
-                    git \
-                    unzip \
-                    tree \
-                    zsh
 
-# Setup dotfiles
-backup() {
+echo "Installing core dependencies..."
+sudo apt install -y "${CORE_PACKAGES[@]}"
+
+# Oh My Zsh and plugins
+ZSH_DIR="${HOME}/.oh-my-zsh"
+ZSH_PLUGINS=(
+    "zsh-autosuggestions"
+    "zsh-syntax-highlighting"
+)
+
+if [ ! -d "${ZSH_DIR}" ]; then
+    echo "Installing Oh My Zsh..."
+    sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
+else
+    echo "Oh My Zsh is already installed. Skipping..."
+fi
+
+echo "Setting Zsh as the default shell..."
+sudo chsh --shell /usr/bin/zsh "$(whoami)"
+
+ZSH_PLUGINS_DIR="${ZSH_DIR}/custom/plugins"
+mkdir -p "${ZSH_PLUGINS_DIR}"
+
+for plugin_name in "${ZSH_PLUGINS[@]}"; do
+    target_dir="${ZSH_PLUGINS_DIR}/${plugin_name}"
+    repo_url="https://github.com/zsh-users/${plugin_name}.git"
+    if [ ! -d "${target_dir}" ]; then
+        echo "-----> Installing plugin: ${plugin_name}..."
+        git clone "${repo_url}" "${target_dir}"
+    else
+        echo "-----> Plugin ${plugin_name} is already installed."
+    fi
+done
+
+# Dotfiles functions
+remove_existing() {
     target=$1
-    if [ -e "$target" ]; then           # Does the config file already exist?
-        if [ ! -L "$target" ]; then       # as a pure file, ie not a symlink?
-        mv "$target" "$target.backup"   # Then backup it
-        echo "-----> Moved your old $target config file to $target.backup"
-        fi
+    if [ -e "${target}" ] || [ -L "${target}" ]; then
+        rm -rf "${target}"
+        echo "-----> Removed existing configuration: ${target}"
     fi
 }
 
 symlink() {
     file=$1
     link=$2
-    if [ ! -e "$link" ]; then
-        echo "-----> Symlinking your new $link"
-        ln -s "$file" "$link"
+    if [ ! -e "${link}" ]; then
+        echo "-----> Symlinking: ${link} -> ${file}"
+        ln -s "${file}" "${link}"
     fi
 }
 
+# Linking Dotfiles
+echo "Configuring dotfiles..."
 SCRIPT_DIR=$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )
-for path in "$SCRIPT_DIR"/*; do
-    name=$(basename "$path")
-    target="$HOME/.$name"
-    if [[ ! "$name" =~ \.sh$ ]] && [[ "$name" != 'settings.json' ]]; then
-        backup "$target"
-        symlink "$path" "$target"
+
+for filepath in "$SCRIPT_DIR"/*; do
+    name=$(basename "${filepath}")
+    target="${HOME}/.$name"
+
+    if [[ ! "$name" =~ \.sh$ ]] && [[ "$name" != 'settings.json' ]] && [[ "$name" != 'README.md' ]]; then
+        remove_existing "${target}"
+        symlink "${filepath}" "${target}"
     fi
 done
 
-# Oh My Zsh
-ZSH_DIR="$HOME/.oh-my-zsh"
-if [ ! -e "$ZSH_DIR" ]; then
-    sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --keep-zshrc --unattended
-fi
-sudo chsh --shell /usr/bin/zsh $(whoami)
+# Terminal Settings
+# CODE_PATH="${HOME}/.vscode-server/data/Machine"
 
-# Zsh plugins
-ZSH_PLUGINS_DIR="$ZSH_DIR/custom/plugins"
-mkdir -p "$ZSH_PLUGINS_DIR"
+# if [ -d "${CODE_PATH}" ]; then
+#     echo "Configuring VS Code Server settings..."
+#     target="${CODE_PATH}/settings.json"
+#     remove_existing "${target}"
+#     symlink "${SCRIPT_DIR}/settings.json" "${target}"
+# fi
 
-if [ ! -d "$ZSH_PLUGINS_DIR/zsh-autosuggestions" ]; then
-    echo "-----> Installing zsh-autosuggestions..."
-    git clone https://github.com/zsh-users/zsh-autosuggestions "$ZSH_PLUGINS_DIR/zsh-autosuggestions"
-fi
+# Python & Pyenv
+PYTHON_VERSION="3.10.6"
+PYENV_DEPENDENCIES=(
+    "build-essential" "libssl-dev" "zlib1g-dev" "libbz2-dev"
+    "libreadline-dev" "libsqlite3-dev" "llvm" "libncursesw5-dev"
+    "xz-utils" "tk-dev" "libxml2-dev" "libxmlsec1-dev" "libffi-dev"
+    "liblzma-dev"
+)
 
-if [ ! -d "$ZSH_PLUGINS_DIR/zsh-syntax-highlighting" ]; then
-    echo "-----> Installing zsh-syntax-highlighting..."
-    git clone https://github.com/zsh-users/zsh-syntax-highlighting "$ZSH_PLUGINS_DIR/zsh-syntax-highlighting"
-fi
+if [ ! -d "${HOME}/.pyenv" ]; then
+    echo "Installing pyenv dependencies..."
+    sudo apt install -y "${PYENV_DEPENDENCIES[@]}"
 
-# Terminal settings
-#WT_PATH=~/.vscode-server/data/Machine
-#if [ -e $CODE_PATH ]; then
-#  target="$CODE_PATH/settings.json"
-#  backup $target
-#  symlink $PWD/settings.json $target
-#fi
-
-# Python
-if [ ! -d "$HOME/.pyenv" ]; then
-    echo "-----> Installing pyenv..."
-    sudo apt install -y build-essential libssl-dev zlib1g-dev \
-    libbz2-dev libreadline-dev libsqlite3-dev wget curl llvm \
-    libncursesw5-dev xz-utils tk-dev libxml2-dev libxmlsec1-dev libffi-dev liblzma-dev
-
-    git clone https://github.com/pyenv/pyenv.git ~/.pyenv
+    echo "Cloning pyenv repository..."
+    git clone https://github.com/pyenv/pyenv.git "${HOME}/.pyenv"
+else
+    echo "pyenv is already installed. Skipping..."
 fi
 
-export PYENV_ROOT="$HOME/.pyenv"
-export PATH="$PYENV_ROOT/bin:$PATH"
+export PYENV_ROOT="${HOME}/.pyenv"
+export PATH="${PYENV_ROOT}/bin:$PATH"
 if command -v pyenv &> /dev/null; then
     eval "$(pyenv init --path)"
-    if ! pyenv versions | grep -q "3.10.6"; then
-        echo "-----> Installing Python 3.10.6 via pyenv (this may take a few minutes)..."
-        pyenv install 3.10.6
+    if ! pyenv versions | grep -q "${PYTHON_VERSION}"; then
+        echo "Installing Python ${PYTHON_VERSION} via pyenv (this may take a few minutes)..."
+        pyenv install "${PYTHON_VERSION}"
+    else
+        echo "Python ${PYTHON_VERSION} is already installed. Skipping..."
     fi
-    pyenv global 3.10.6
+
+    echo "Setting Python ${PYTHON_VERSION} as global version..."
+    pyenv global "${PYTHON_VERSION}"
 fi
 
-zsh ~/.zshrc
-
-echo "👌 Everything went well"
+echo ''
+echo "👌 Everything went well (Restart your terminal or run 'exec zsh')"

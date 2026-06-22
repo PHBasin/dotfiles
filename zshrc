@@ -9,7 +9,7 @@ plugins=(git gitfast last-working-dir common-aliases zsh-autosuggestions zsh-syn
 # Zsh history
 export HISTFILE="${ZSH}/cache/.zsh_history"
 export HISTSIZE=10000000
-export SAVEHIST=${HISTSIZE}
+export SAVEHIST="${HISTSIZE}"
 export ZSH_COMPDUMP="${ZSH}/cache/zcompdump-${HOST}-${ZSH_VERSION}"
 
 # Load Oh-My-Zsh
@@ -37,11 +37,11 @@ if [ -s "${NVM_DIR}/nvm.sh" ]; then
   autoload -U add-zsh-hook
   load-nvmrc() {
     local nvmrc_path="$(nvm_find_nvmrc 2>/dev/null)"
-    if [ -n "$nvmrc_path" ]; then
+    if [ -n "${nvmrc_path}" ]; then
       local nvmrc_node_version=$(nvm version "$(cat "${nvmrc_path}")" 2>/dev/null)
-      if [ "$nvmrc_node_version" = "N/A" ]; then
+      if [ "${nvmrc_node_version}" = "N/A" ]; then
         nvm install
-      elif [ "$nvmrc_node_version" != "$(nvm version 2>/dev/null)" ]; then
+      elif [ "${nvmrc_node_version}" != "$(nvm version 2>/dev/null)" ]; then
         nvm use --silent
       fi
     fi

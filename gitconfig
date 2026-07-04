@@ -65,7 +65,7 @@
 	mergeoptions = --no-edit
 
 [user]
-	email = pierre-henri.basin@soprasteria.com
+	email = pierre-henri.basin@orange.fr
 	name = PHBasin
 
 [credential]

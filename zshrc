@@ -60,4 +60,4 @@ fi
 
 # Aliases
 [[ -f "${HOME}/.aliases" ]] && source "${HOME}/.aliases"
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+

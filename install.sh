@@ -1,122 +1,128 @@
 #!/usr/bin/env bash
+#
+# Install system packages, Oh My Zsh, pyenv and symlink dotfiles into $HOME.
+# Idempotent: safe to run several times.
+#
+set -euo pipefail
 
-# System update and
-CORE_PACKAGES=(
-    "ca-certificates" "curl" "wget" "vim" "jq" "git" "unzip" "tree" "zsh"
-)
+DOTFILES_DIR="$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" &>/dev/null && pwd)"
+BACKUP_DIR="${HOME}/.dotfiles-backup/$(date +%Y%m%d-%H%M%S)"
+PYTHON_VERSION="${PYTHON_VERSION:-3.10.6}"
 
-echo "Updating system packages..."
-sudo apt update && sudo apt upgrade -y
+# Files in the repo symlinked to ~/.<name>
+DOTFILES=(aliases gitconfig vim zprofile zshrc)
 
-echo "Installing core dependencies..."
-sudo apt install -y "${CORE_PACKAGES[@]}"
+CORE_PACKAGES=(ca-certificates curl wget vim jq git unzip tree zsh)
 
-# Oh My Zsh and plugins
-ZSH_DIR="${HOME}/.oh-my-zsh"
-ZSH_PLUGINS=(
-    "zsh-autosuggestions"
-    "zsh-syntax-highlighting"
-)
-
-if [ ! -d "${ZSH_DIR}" ]; then
-    echo "Installing Oh My Zsh..."
-    sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
-else
-    echo "Oh My Zsh is already installed. Skipping..."
-fi
-
-echo "Setting Zsh as the default shell..."
-sudo chsh --shell /usr/bin/zsh "$(whoami)"
-
-ZSH_PLUGINS_DIR="${ZSH_DIR}/custom/plugins"
-mkdir -p "${ZSH_PLUGINS_DIR}"
-
-for plugin_name in "${ZSH_PLUGINS[@]}"; do
-    target_dir="${ZSH_PLUGINS_DIR}/${plugin_name}"
-    repo_url="https://github.com/zsh-users/${plugin_name}.git"
-    if [ ! -d "${target_dir}" ]; then
-        echo "-----> Installing plugin: ${plugin_name}..."
-        git clone "${repo_url}" "${target_dir}"
-    else
-        echo "-----> Plugin ${plugin_name} is already installed."
-    fi
-done
-
-# Dotfiles functions
-remove_existing() {
-    target=$1
-    if [ -e "${target}" ] || [ -L "${target}" ]; then
-        rm -rf "${target}"
-        echo "-----> Removed existing configuration: ${target}"
-    fi
-}
-
-symlink() {
-    file=$1
-    link=$2
-    if [ ! -e "${link}" ]; then
-        echo "-----> Symlinking: ${link} -> ${file}"
-        ln -s "${file}" "${link}"
-    fi
-}
-
-# Linking Dotfiles
-echo "Configuring dotfiles..."
-SCRIPT_DIR=$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )
-
-for filepath in "$SCRIPT_DIR"/*; do
-    name=$(basename "${filepath}")
-    target="${HOME}/.$name"
-
-    if [[ ! "$name" =~ \.sh$ ]] && [[ "$name" != 'settings.json' ]] && [[ "$name" != 'README.md' ]]; then
-        remove_existing "${target}"
-        symlink "${filepath}" "${target}"
-    fi
-done
-
-# Terminal Settings
-# CODE_PATH="${HOME}/.vscode-server/data/Machine"
-
-# if [ -d "${CODE_PATH}" ]; then
-#     echo "Configuring VS Code Server settings..."
-#     target="${CODE_PATH}/settings.json"
-#     remove_existing "${target}"
-#     symlink "${SCRIPT_DIR}/settings.json" "${target}"
-# fi
-
-# Python & Pyenv
-PYTHON_VERSION="3.10.6"
+# https://github.com/pyenv/pyenv/wiki#suggested-build-environment
 PYENV_DEPENDENCIES=(
-    "build-essential" "libssl-dev" "zlib1g-dev" "libbz2-dev"
-    "libreadline-dev" "libsqlite3-dev" "llvm" "libncursesw5-dev"
-    "xz-utils" "tk-dev" "libxml2-dev" "libxmlsec1-dev" "libffi-dev"
-    "liblzma-dev"
+    build-essential libssl-dev zlib1g-dev libbz2-dev libreadline-dev
+    libsqlite3-dev libncurses-dev xz-utils tk-dev libxml2-dev
+    libxmlsec1-dev libffi-dev liblzma-dev
 )
 
-if [ ! -d "${HOME}/.pyenv" ]; then
-    echo "Installing pyenv dependencies..."
-    sudo apt install -y "${PYENV_DEPENDENCIES[@]}"
+ZSH_DIR="${HOME}/.oh-my-zsh"
+ZSH_PLUGINS=(zsh-autosuggestions zsh-syntax-highlighting)
 
-    echo "Cloning pyenv repository..."
-    git clone https://github.com/pyenv/pyenv.git "${HOME}/.pyenv"
-else
-    echo "pyenv is already installed. Skipping..."
-fi
+info() { printf '\033[1;34m==>\033[0m %s\n' "$*"; }
+step() { printf '    %s\n' "$*"; }
+die()  { printf '\033[1;31mError:\033[0m %s\n' "$*" >&2; exit 1; }
 
-export PYENV_ROOT="${HOME}/.pyenv"
-export PATH="${PYENV_ROOT}/bin:$PATH"
-if command -v pyenv &> /dev/null; then
-    eval "$(pyenv init --path)"
-    if ! pyenv versions | grep -q "${PYTHON_VERSION}"; then
-        echo "Installing Python ${PYTHON_VERSION} via pyenv (this may take a few minutes)..."
-        pyenv install "${PYTHON_VERSION}"
+install_packages() {
+    command -v apt-get &>/dev/null || die "apt-get not found: only Debian/Ubuntu are supported."
+
+    info "Updating system packages..."
+    sudo apt-get update -q
+    sudo apt-get upgrade -yq
+
+    info "Installing core dependencies..."
+    sudo apt-get install -yq "${CORE_PACKAGES[@]}"
+}
+
+install_oh_my_zsh() {
+    if [[ -d "${ZSH_DIR}" ]]; then
+        info "Oh My Zsh already installed, skipping."
     else
-        echo "Python ${PYTHON_VERSION} is already installed. Skipping..."
+        info "Installing Oh My Zsh..."
+        RUNZSH=no CHSH=no KEEP_ZSHRC=yes sh -c \
+            "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
     fi
 
-    echo "Setting Python ${PYTHON_VERSION} as global version..."
-    pyenv global "${PYTHON_VERSION}"
-fi
+    local plugins_dir="${ZSH_DIR}/custom/plugins"
+    mkdir -p "${plugins_dir}"
+    for plugin in "${ZSH_PLUGINS[@]}"; do
+        if [[ -d "${plugins_dir}/${plugin}" ]]; then
+            step "Plugin ${plugin} already installed."
+        else
+            step "Installing plugin ${plugin}..."
+            git clone -q --depth=1 "https://github.com/zsh-users/${plugin}.git" "${plugins_dir}/${plugin}"
+        fi
+    done
 
-echo ''
-echo "👌 Everything went well (Restart your terminal or run 'exec zsh')"
+    local zsh_path
+    zsh_path="$(command -v zsh)"
+    if [[ "$(getent passwd "$(id -un)" | cut -d: -f7)" != "${zsh_path}" ]]; then
+        info "Setting Zsh as the default shell..."
+        sudo chsh --shell "${zsh_path}" "$(id -un)"
+    fi
+}
+
+# Symlink ~/.<name> -> repo/<name>, backing up any existing real file.
+link_dotfiles() {
+    info "Linking dotfiles..."
+    for name in "${DOTFILES[@]}"; do
+        local source="${DOTFILES_DIR}/${name}"
+        local target="${HOME}/.${name}"
+
+        [[ -e "${source}" ]] || die "Missing ${source}"
+
+        if [[ -L "${target}" && "$(readlink -- "${target}")" == "${source}" ]]; then
+            step "${target} already linked."
+            continue
+        fi
+
+        if [[ -e "${target}" || -L "${target}" ]]; then
+            mkdir -p "${BACKUP_DIR}"
+            mv -- "${target}" "${BACKUP_DIR}/"
+            step "Backed up ${target} to ${BACKUP_DIR}/"
+        fi
+
+        ln -s -- "${source}" "${target}"
+        step "Linked ${target} -> ${source}"
+    done
+}
+
+install_pyenv() {
+    export PYENV_ROOT="${HOME}/.pyenv"
+    export PATH="${PYENV_ROOT}/bin:${PATH}"
+
+    if [[ -d "${PYENV_ROOT}" ]]; then
+        info "pyenv already installed, skipping."
+    else
+        info "Installing pyenv and its build dependencies..."
+        sudo apt-get install -yq "${PYENV_DEPENDENCIES[@]}"
+        git clone -q --depth=1 https://github.com/pyenv/pyenv.git "${PYENV_ROOT}"
+    fi
+
+    eval "$(pyenv init --path)"
+
+    if pyenv versions --bare | grep -qxF "${PYTHON_VERSION}"; then
+        info "Python ${PYTHON_VERSION} already installed, skipping."
+    else
+        info "Installing Python ${PYTHON_VERSION} (this may take a few minutes)..."
+        pyenv install "${PYTHON_VERSION}"
+    fi
+    pyenv global "${PYTHON_VERSION}"
+}
+
+main() {
+    install_packages
+    install_oh_my_zsh
+    link_dotfiles
+    install_pyenv
+
+    echo
+    info "Done. Restart your terminal or run 'exec zsh'."
+}
+
+main "$@"

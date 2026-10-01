@@ -1,37 +1,24 @@
 #!/usr/bin/env bash
-set -e
+#
+# Clone (or update) the dotfiles repository, then run install.sh.
+#   curl -fsSL https://raw.githubusercontent.com/PHBasin/dotfiles/main/bootstrap.sh | bash
+#
+set -euo pipefail
 
-USER="PHBasin"
-REPO_URL="https://github.com/${USER}/dotfiles.git"
-DOTFILES_DIR="${HOME}/dotfiles"
+REPO_URL="${DOTFILES_REPO:-https://github.com/PHBasin/dotfiles.git}"
+DOTFILES_DIR="${DOTFILES_DIR:-${HOME}/dotfiles}"
 
-# Git
-if ! command -v git &> /dev/null; then
-    echo "Git is not installed."
-    exit 1
-fi
+command -v git &>/dev/null || { echo "Git is not installed (sudo apt install git)." >&2; exit 1; }
 
-# Clone dotfiles
-if [ -d "${DOTFILES_DIR}" ]; then
-    echo "Pulling the latest changes from the repository..."
-    cd "${DOTFILES_DIR}"
-    git pull origin main --quiet
-    echo "Repository ${DOTFILES_DIR} updated."
+if [[ -d "${DOTFILES_DIR}/.git" ]]; then
+    echo "Updating ${DOTFILES_DIR}..."
+    git -C "${DOTFILES_DIR}" pull --ff-only --quiet
 else
-    echo "Cloning the dotfiles repository..."
+    echo "Cloning ${REPO_URL} into ${DOTFILES_DIR}..."
     git clone -q "${REPO_URL}" "${DOTFILES_DIR}"
 fi
 
-# Installation script
-if [ -f "${DOTFILES_DIR}/install.sh" ]; then
-    echo "Starting installation script..."
-    cd "${DOTFILES_DIR}"
-    chmod +x install.sh
-    ./install.sh
-else
-    echo "install.sh was not found in the repository"
-    exit 1
-fi
+bash "${DOTFILES_DIR}/install.sh"
 
-echo ''
+echo
 echo 'Your environment is ready to use 🎉'

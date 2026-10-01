@@ -20,6 +20,16 @@
 
 [diff]
 	algorithm = histogram
+	colorMoved = default
+
+[fetch]
+	prune = true
+
+[rebase]
+	autoStash = true
+
+[merge]
+	conflictStyle = zdiff3
 
 [alias]
 	br = branch
@@ -31,7 +41,8 @@
 	d = !git --no-pager diff
 	dt  = difftool
 	fo = fetch origin
-	m = checkout master
+	default-branch = !git symbolic-ref --short refs/remotes/origin/HEAD 2>/dev/null | sed 's@^origin/@@' | grep . || echo main
+	m = !git checkout "$(git default-branch)"
 	st = status -sb
 	stat = !git --no-pager diff --stat
 
@@ -41,7 +52,7 @@
 # !f(){ git pull "$@" && git submodule update --init --recursive; }; f
 
 # Clean merged branches
-	sweep = !git branch --merged master | grep -v 'master$' | xargs git branch -d && git remote prune origin
+	sweep = "!f() { b=$(git default-branch); git branch --merged \"$b\" | grep -vE '^\\*|^[[:space:]]*('\"$b\"')$' | xargs -r git branch -d; git remote prune origin; }; f"
 
 # http://www.jukie.net/bart/blog/pimping-out-git-log
 	lg = log --graph --all --pretty=format:'%Cred%h%Creset - %s %Cgreen(%cr) %C(bold blue)%an%Creset %C(yellow)%d%Creset'
@@ -54,15 +65,12 @@
 	unstage = reset HEAD --
 
 [help]
-	autocorrect = 1
+	autocorrect = prompt
 
 [push]
 	default = current
 	autoSetupRemote = true
 	followTags = true
-
-[branch "master"]
-	mergeoptions = --no-edit
 
 [user]
 	email = pierre-henri.basin@orange.fr

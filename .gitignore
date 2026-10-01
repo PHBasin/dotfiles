@@ -1,1 +1,5 @@
+# Vim runtime state (~/.vim points to vim/)
 /vim/viminfo
+/vim/.netrwhist
+/vim/undo/
+/vim/swap/

@@ -12,8 +12,8 @@ endif
 
 " Enable syntax highlighting
 syntax on
-colorscheme codedark
 let g:codedark_italics = 1
+colorscheme codedark
 if exists('+termguicolors')
   set termguicolors
 endif
@@ -79,18 +79,20 @@ fun! <SID>StripWhitespace()
 endfun
 command! Stripwhitespace call <SID>StripWhitespace()
 
-if has("autocmd")
-  " StripTrailingWhitespaces
-  autocmd BufWritePre * Stripwhitespace
-  " To spell check all git commit messages
-  au BufNewFile,BufRead COMMIT_EDITMSG set spell nonumber nolist wrap linebreak
-  " Set filetype tab settings
-  autocmd FileType python,doctest set ai ts=4 sw=4 sts=4 et
+augroup vimrc
+  autocmd!
+  " Strip trailing whitespace (except where it is meaningful)
+  autocmd BufWritePre * if index(['markdown', 'diff'], &filetype) < 0 | Stripwhitespace | endif
+  " Spell check git commit messages
+  autocmd BufNewFile,BufRead COMMIT_EDITMSG setlocal spell nonumber nolist wrap linebreak
+  " Filetype indentation
+  autocmd FileType python,doctest setlocal ai ts=4 sw=4 sts=4 et
+  " Restore last cursor position
   autocmd BufReadPost *
-  \ if line("'\"") > 1 && line("'\"") <= line("$") |
+  \ if line("'\"") >= 1 && line("'\"") <= line("$") && &filetype !~# 'commit' |
   \   exe "normal! g`\"" |
   \ endif
-endif
+augroup END
 
 " WSL yank support
 let s:clip = "/mnt/c/Windows/System32/clip.exe"
@@ -102,11 +104,10 @@ if executable(s:clip)
 endif
 
 " ChromeOS yank support
-let g:os = substitute(system('uname -n'), '\n', '', '')
-if g:os == "penguin"
+if hostname() ==# 'penguin'
   augroup osc52
     autocmd!
-    autocmd TextYankPost * if v:event.operator ==# 'y' | call SendViaOSC52(getreg(v:event.regname)) | endif
+    autocmd TextYankPost * if v:event.operator ==# 'y' && exists('*SendViaOSC52') | call SendViaOSC52(getreg(v:event.regname)) | endif
   augroup END
 endif
 

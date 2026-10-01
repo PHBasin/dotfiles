@@ -13,7 +13,7 @@ export SAVEHIST="${HISTSIZE}"
 export ZSH_COMPDUMP="${ZSH}/cache/zcompdump-${HOST}-${ZSH_VERSION}"
 
 # Load Oh-My-Zsh
-source ${ZSH}/oh-my-zsh.sh
+source "${ZSH}/oh-my-zsh.sh"
 
 # Zsh History Options
 setopt APPEND_HISTORY
@@ -54,10 +54,11 @@ fi
 # if [ -s "${HOME}/.kube/config" ]; then
 #   source <(kubectl completion zsh)
 #   compdef kubecolor=kubectl
-#   source "${HOME}/dotfiles/load-k8s.sh"
 #   RPROMPT+=' [🐋 $ZSH_KUBECTL_NAMESPACE]'
 # fi
 
 # Aliases
 [[ -f "${HOME}/.aliases" ]] && source "${HOME}/.aliases"
 
+# Machine-specific settings and secrets (not versioned)
+[[ -f "${HOME}/.zshrc.local" ]] && source "${HOME}/.zshrc.local"

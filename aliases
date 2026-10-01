@@ -5,15 +5,15 @@ alias grep='grep --color=auto'
 # Get External IP / local IPs
 alias ip='ip -c'
 alias ipconfig='curl ipinfo.io/ip'
-alias ips="ip a | perl -nle '/(\d+\.\d+\.\d+\.\d+)/ && print $1'"
-alias speedtest='curl -s https://raw.githubusercontent.com/sivel/speedtest-cli/master/speedtest.py | python -'
+alias ips="ip -4 -br addr"
+alias speedtest='curl -s https://raw.githubusercontent.com/sivel/speedtest-cli/master/speedtest.py | python3 -'
 alias wget='wget --hsts-file="$HOME/.cache/.wget-hsts"'
 
 # Open subsystem folder with GUI
-if [[ $(uname -a) =~ 'microsoft' ]]; then
-	alias open='explorer.exe'
-elif [[ $(uname -a) =~ 'Linux' ]]; then
-	alias open='xdg-open'
+if [[ -n "${WSL_DISTRO_NAME}" ]]; then
+  alias open='explorer.exe'
+elif (( $+commands[xdg-open] )); then
+  alias open='xdg-open'
 fi
 
 # Python
@@ -31,10 +31,8 @@ alias jfrog='jf'
 # https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/docker
 alias dnames="docker ps --format '{{.Names}}'"
 
-function dip {
-  local OUT=""
-  local IP=""
-  local NAME=""
+dip() {
+  local OUT="" IP="" NAME=""
   for NAME in $(docker ps --format '{{.Names}}')
   do
     IP=$(docker inspect --format='{{range .NetworkSettings.Networks}}{{println .IPAddress}}{{end}}' "${NAME}" | xargs)
@@ -49,21 +47,8 @@ function dip {
 
 alias dr='docker run -it'
 alias dl='docker logs -f'
-alias dstpa='dstp $(dcls -q)'
-alias drma='drm $(dcls -aq)'
-# alias dcls='docker container ls'
-# alias dils='docker image ls'
-# alias dnls='docker network ls'
-# alias dr='docker container run'
-# alias drit='docker container run -it'
-# alias drm='docker container rm'
-# alias dstp='docker container stop'
-# alias dvls='docker volume ls'
-
-# Docker Compose
-# https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/docker-compose
-# alias dcupd='docker compose up -d'
-# alias dcdn='docker compose down'
+alias dstpa='docker container stop $(docker container ls -q)'
+alias drma='docker container rm $(docker container ls -aq)'
 
 # Kubernetes
 alias k='kubecolor'

@@ -1,23 +1,27 @@
 # Encoding
 export LANG=en_US.UTF-8
-export LC_ALL=en_US.UTF-8
 
 # Default applications
 export EDITOR=vim
-export BROWSER='/mnt/c/Program Files/Google/Chrome/Application/chrome.exe'
+if [[ -n "${WSL_DISTRO_NAME}" ]]; then
+  export BROWSER='/mnt/c/Program Files/Google/Chrome/Application/chrome.exe'
+fi
 
 # Python configurations
 export VIRTUAL_ENV_DISABLE_PROMPT=1
 export PYTHONHISTORY="$HOME/.cache/.python_history"
 
-export PYENV_ROOT="$HOME/.pyenv"
-export PATH="$PYENV_ROOT/bin:$PATH"
-eval "$(pyenv init --path)"
+# Keep PATH entries unique
+typeset -U path PATH
 
-# Claude
-export CLAUDE_ROOT="$HOME/.local/bin"
-export PATH="$CLAUDE_ROOT:$PATH"
+export PYENV_ROOT="$HOME/.pyenv"
+if [[ -d "$PYENV_ROOT/bin" ]]; then
+  path=("$PYENV_ROOT/bin" $path)
+  eval "$(pyenv init --path)"
+fi
+
+# User binaries (Claude Code, pipx...)
+path=("$HOME/.local/bin" $path)
 
 # AWS
 export AWS_PAGER=""
-
